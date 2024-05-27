@@ -7,7 +7,7 @@ const NewsCard = () => {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-3">
         <div>
           <h2 className="text-3xl font-bold">Latest News</h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 max-w-md">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit
           </p>
