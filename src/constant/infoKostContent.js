@@ -18,12 +18,12 @@ import {
   faMapMarkerAlt,
   faPlane,
   faMonument,
-  faUmbrellaBeach,
   faBanSmoking,
   faBan,
   faClock,
   faUserFriends,
   faShoppingBag,
+  faUmbrella,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const kosts = [
@@ -35,7 +35,7 @@ export const kosts = [
     size: "Family",
     review: 258,
     rating: 4,
-    price: "1500k",
+    price: "1.500.000",
     day: "per month",
     region: "Denpasar Selatan",
     dateAdded: "2023-05-01",
@@ -90,7 +90,7 @@ export const kosts = [
       ],
       nearbyPlaces: [
         { name: "Bali Museum - 5 km", icon: faMonument },
-        { name: "Sanur Beach - 10 km", icon: faUmbrellaBeach },
+        { name: "Sanur Beach - 10 km", icon: faUmbrella },
         { name: "Ngurah Rai International Airport - 12 km", icon: faPlane },
         { name: "Bajra Sandhi Monument - 4 km", icon: faMonument },
         { name: "Denpasar Traditional Market - 6 km", icon: faShoppingBag },

@@ -142,7 +142,7 @@ const DetailKostPage = () => {
         </div>
       </div>
       <div className="w-full lg:w-[30%] lg:sticky top-24 h-fit mt-10 lg:mt-[135px] pt-2">
-        <BookingSidebar />
+      <BookingSidebar price={`Rp${kost.price}`} />
       </div>
     </section>
   );

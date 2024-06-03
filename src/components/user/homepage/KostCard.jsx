@@ -36,13 +36,13 @@ const KostCard = ({ kosts }) => {
     <section className="overflow-x-auto flex w-full">
       <div className="flex flex-row gap-5 justify-center items-center mx-auto">
         {kosts.map((kost, index) => (
-          <Link to={`/user/kost/${kost.id}`} key={index} className="w-[200px] md:w-80 rounded-none flex-shrink-0">
+          <Link to={`/user/kost/${kost.id}`} key={index} className="w-[200px] md:w-[280px]  rounded-none flex-shrink-0">
             <Card className="w-full rounded-none flex-shrink-0">
-              <CardHeader color="blue-gray" className="relative rounded-none">
+              <CardHeader color="blue-gray" className="relative rounded-none w-full mx-auto">
                 <img
                   src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
                   alt="card-image"
-                  className="h-56 object-cover rounded-none"
+                  className="h-56 object-cover rounded-none w-full"
                 />
               </CardHeader>
               <CardBody>
