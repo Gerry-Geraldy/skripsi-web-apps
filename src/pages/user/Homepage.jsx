@@ -7,7 +7,6 @@ import {
   PopularKost,
   NewsCard,
 } from "../../components/user/homepage";
-import { Footer } from "../../components/layouts";
 import {
   KostByRegion,
   NewKost,
@@ -41,7 +40,6 @@ const Homepage = () => {
         <PopularKost />
         <NewsCard />
       </div>
-      <Footer />
     </section>
   );
 };

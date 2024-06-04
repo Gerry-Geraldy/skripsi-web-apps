@@ -1,4 +1,3 @@
-// Navbar.jsx
 import { useState, useEffect } from "react";
 import { Collapse, Typography, IconButton } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -7,7 +6,7 @@ import routes from "../../routes";
 import { logo } from "../../../public";
 import PropTypes from "prop-types";
 
-function NavList({ isMobile, isHomePage, isScrolled }) {
+function NavList({ isMobile, isHomePage, isAboutPage, isScrolled }) {
   return (
     <ul
       className={`my-2 flex ${
@@ -20,7 +19,7 @@ function NavList({ isMobile, isHomePage, isScrolled }) {
           as="li"
           variant="small"
           className={`p-1 font-medium ${
-            isHomePage && !isMobile
+            (isHomePage || isAboutPage) && !isMobile
               ? "text-white"
               : isScrolled
               ? "text-black"
@@ -32,7 +31,7 @@ function NavList({ isMobile, isHomePage, isScrolled }) {
             className={`p-1 font-medium ${
               isScrolled
                 ? "text-black"
-                : isHomePage && !isMobile
+                : (isHomePage || isAboutPage) && !isMobile
                 ? "text-white"
                 : ""
             }`}
@@ -48,6 +47,7 @@ function NavList({ isMobile, isHomePage, isScrolled }) {
 NavList.propTypes = {
   isMobile: PropTypes.bool.isRequired,
   isHomePage: PropTypes.bool.isRequired,
+  isAboutPage: PropTypes.bool.isRequired,
   isScrolled: PropTypes.bool.isRequired,
 };
 
@@ -57,6 +57,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/user/home";
+  const isAboutPage = location.pathname === "/user/about";
 
   const handleWindowResize = () => {
     setIsMobile(window.innerWidth < 768);
@@ -65,8 +66,6 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const scrollTop = window.pageYOffset;
-
-    // Jika posisi scroll lebih besar dari 0, atur isScrolled menjadi true
     setIsScrolled(scrollTop > 0);
   };
 
@@ -78,7 +77,6 @@ const Navbar = () => {
       window.removeEventListener("resize", handleWindowResize);
       window.removeEventListener("scroll", handleScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   const toggleNav = () => {
@@ -91,11 +89,10 @@ const Navbar = () => {
 
   return (
     <section
-      className={`mx-auto max-w-screen p-5 relative z-10 tw-full navbar  ${
+      className={`mx-auto max-w-screen p-5 relative z-10 tw-full navbar ${
         isMobile ? "bg-white" : ""
       } ${isScrolled ? "bg-white shadow-sm rounded-md shadow-gray-600" : ""}`}
       style={{
-        // backgroundColor: isScrolled ? "#fff" : "",
         transition: "background-color 0.3s ease-in-out",
       }}
     >
@@ -129,13 +126,19 @@ const Navbar = () => {
           <NavList
             isMobile={false}
             isHomePage={isHomePage}
+            isAboutPage={isAboutPage}
             isScrolled={isScrolled}
           />
         )}
       </div>
       {isMobile && (
         <Collapse open={openNav}>
-          <NavList isMobile={true} isHomePage={isHomePage} />
+          <NavList
+            isMobile={true}
+            isHomePage={isHomePage}
+            isAboutPage={isAboutPage}
+            isScrolled={isScrolled}
+          />
         </Collapse>
       )}
     </section>

@@ -7,7 +7,7 @@ const BookingSidebar = ({ price }) => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 border-t rounded-t-md shadow-lg bg-white w-full lg:static">
+    <div className="fixed bottom-0 left-0 right-0 p-4 border-t rounded-t-md shadow-lg bg-white w-full lg:static z-10">
       <div className="mb-4">
         <p className="text-xl font-semibold text-gray-700">Subtotal</p>
         <p className="text-3xl font-bold text-green-500">{price}</p>

@@ -2,7 +2,6 @@ import {
   Homepage,
   AboutUs,
   PopularKost,
-  OurPackages,
   Help,
   DetailKostPage,
 } from "./pages/user";
@@ -22,6 +21,7 @@ export const routes = [
         name: "About Us",
         path: "user/about",
         element: <AboutUs />,
+        isAboutPage: true,
       },
       {
         name: "Popular Kost",
@@ -29,17 +29,11 @@ export const routes = [
         element: <PopularKost />,
       },
       {
-        name: "Our Packages",
-        path: "user/packages",
-        element: <OurPackages />,
-      },
-      {
         name: "Help",
         path: "user/help",
         element: <Help />,
       },
       {
-        name: "Detail Kost",
         path: "user/kost/:id",
         element: <DetailKostPage />,
       },

@@ -1,6 +1,6 @@
 // UserLayout.jsx
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Navbar } from "../components/layouts";
+import { Footer, Navbar } from "../components/layouts";
 import routes from "../routes";
 
 export function UserLayout() {
@@ -21,6 +21,7 @@ export function UserLayout() {
           )}
         </Routes>
       </div>
+      <Footer />
     </section>
   );
 }
