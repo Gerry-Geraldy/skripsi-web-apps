@@ -9,6 +9,7 @@ const Jumbotron = () => {
       <Carousel className=" ">
         {jumbotronData.map((item, index) => (
           <div key={index} className="relative h-full w-full">
+                  <div className="absolute inset-0 bg-black opacity-30 z-0 w-fullh-[450px] md:h-[750px]"></div>
             <img
               src={item.image}
               alt={`image ${index + 1}`}
@@ -32,7 +33,7 @@ const Jumbotron = () => {
                 </Typography>
               </div>
             </div>
-            <SearchCard/>
+            <SearchCard />
           </div>
         ))}
       </Carousel>

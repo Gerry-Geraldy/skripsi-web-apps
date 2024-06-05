@@ -77,6 +77,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleWindowResize);
       window.removeEventListener("scroll", handleScroll);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   const toggleNav = () => {

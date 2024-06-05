@@ -1,5 +1,11 @@
+import { AboutDescription, AboutJumbotron, AboutVideo } from "../../components/user/about";
+
 const AboutUs = () => {
-  return <div className="text-black relative">AboutUs</div>;
+  return <section className="">
+    <AboutJumbotron/>
+    <AboutDescription/>
+    <AboutVideo/>
+  </section>;
 };
 
 export default AboutUs;
