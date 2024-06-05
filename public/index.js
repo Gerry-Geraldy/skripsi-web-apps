@@ -9,9 +9,10 @@ import region4 from "./Region4.jpg";
 import region5 from "./Region5.jpg";
 import region6 from "./Region6.jpg";
 import banner1 from "./Banner1.jpg";
-import maps from "./Maps.png"
-import avatar1 from "./Avatar1.jpg"
-import avatar2 from "./Avatar2.jpg"
+import maps from "./Maps.png";
+import avatar1 from "./Avatar1.jpg";
+import avatar2 from "./Avatar2.jpg";
+import avatar3 from "./Avatar3.jpg";
 
 export {
   logo,
@@ -28,4 +29,5 @@ export {
   maps,
   avatar1,
   avatar2,
+  avatar3,
 };

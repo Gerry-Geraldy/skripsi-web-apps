@@ -5,7 +5,7 @@ import {
   faHeart,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
-import { banner1, region1 } from "../../../../public";
+import { banner1, region1 } from "../../../../public"; 
 
 const BannerKost = () => {
   return (
