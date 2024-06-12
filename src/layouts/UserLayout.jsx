@@ -17,7 +17,7 @@ export function UserLayout() {
             ({ layout, pages }) =>
               layout === "UserLayout" &&
               pages.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
+                <Route exact key={path} path={`/${path}`} element={element} />
               ))
           )}
         </Routes>
