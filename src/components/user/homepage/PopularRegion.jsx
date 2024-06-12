@@ -32,7 +32,7 @@ const PopularRegion = () => {
             <Button
               key={index}
               variant="outlined"
-              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] text-center "
+              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] text-center"
               onClick={() => handleRegionSelect(region)}
             >
               {region.name}

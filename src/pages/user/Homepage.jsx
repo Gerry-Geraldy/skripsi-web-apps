@@ -33,8 +33,8 @@ const Homepage = () => {
       </div>
       <PopularRegion />
       <NewKost />
-      <BannerKost />
-      <div className="mt-[200px] lg:mt-16 ">
+      <BannerKost/>
+      <div className="mt-[300px] lg:mt-16 ">
         <KostByRegion />
         <BannerApp />
         <PopularKost />

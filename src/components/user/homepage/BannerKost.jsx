@@ -10,7 +10,7 @@ import { banner1, region1 } from "../../../../public";
 const BannerKost = () => {
   return (
     <section className="relative mt-24 shadow-sm h-[450px] w-full">
-      <div className="relative h-[620px] lg:h-full w-full">
+      <div className="relative h-[720px] lg:h-full w-full">
         <img
           src={banner1}
           alt="banner kost"
