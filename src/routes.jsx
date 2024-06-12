@@ -6,35 +6,35 @@ import {
   DetailKostPage,
 } from "./pages/user";
 
-export const routes = [
+const routes = [
   {
     title: "User Pages",
     layout: "UserLayout",
     pages: [
       {
         name: "Home Page",
-        path: "user/home",
+        path: "/user/home",
         element: <Homepage />,
         isHomePage: true,
       },
       {
         name: "About Us",
-        path: "user/about",
+        path: "/user/about",
         element: <AboutUs />,
         isAboutPage: true,
       },
       {
         name: "Popular Kost",
-        path: "user/popular",
+        path: "/user/popular",
         element: <PopularKost />,
       },
       {
         name: "Help",
-        path: "user/help",
+        path: "/user/help",
         element: <Help />,
       },
       {
-        path: "user/kost/:id",
+        path: "/user/kost/:id",
         element: <DetailKostPage />,
       },
     ],
