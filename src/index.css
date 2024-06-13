@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+      font-family: Volkhov Bold;
+      src: url("../public/Font/Volkhov-Bold.ttf") format('truetype');
+    }
+    
+    @font-face {
+      font-family: Mulish SemiBold;
+      src: url("../public/Font/Mulish-SemiBold.ttf") format('truetype');
+    }
+    
+    @font-face {
+      font-family: Mulish ExtraBold;
+      src: url("../public/Font/Mulish-ExtraBold.ttf") format('truetype');
+    }
+
+    @font-face {
+      font-family: Mulish Bold;
+      src: url("../public/Font/Mulish-Bold.ttf") format('truetype');
+    }
 html{
       scroll-behavior: smooth;
 }

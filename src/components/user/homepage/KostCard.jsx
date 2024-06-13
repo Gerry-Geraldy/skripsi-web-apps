@@ -23,8 +23,8 @@ const KostCard = ({ kosts }) => {
         <FontAwesomeIcon
           key={i}
           icon={faStar}
-          className={`h-3 w-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${
-            i <= rating ? "text-orange-400" : "text-gray-400"
+          className={`w-4 h-4 md:w-5 md:h-5 ${
+            i <= rating ? "text-primary" : "text-gray-400"
           }`}
         />
       );
@@ -36,7 +36,7 @@ const KostCard = ({ kosts }) => {
     <section className="overflow-x-auto flex w-full">
       <div className="flex flex-row gap-5 justify-center items-center mx-auto">
         {kosts.map((kost, index) => (
-          <Link to={`/user/kost/${kost.id}`} key={index} className="w-[200px] md:w-80  rounded-none flex-shrink-0">
+          <Link to={`/user/kost/${kost.id}`} key={index} className="w-80 rounded-none flex-shrink-0">
             <Card className="w-full rounded-none flex-shrink-0">
               <CardHeader color="blue-gray" className="relative rounded-none w-full mx-auto">
                 <img
@@ -74,12 +74,12 @@ const KostCard = ({ kosts }) => {
                 </div>
               </CardBody>
               <CardFooter className="border-t-gray-200 flex flex-row justify-between items-center border border-t-1">
-                <div className="flex flex-col gap-1 mt-4">
+                <div className="flex flex-col gap-3 mt-2 lg:mt-1">
                  <div className="flex ">{renderStars(kost.rating)}</div>
                   <p>{kost.review} review</p>
                 </div>
-                <div className="flex flex-col">
-                  <h5 className="text-[15px] sm:text-[18px] font-serif font-semibold text-green-500 ">
+                <div className="flex flex-col gap-1">
+                  <h5 className="text-[15px] sm:text-[16px] font-volkhovBold text-priceColor">
                     Rp.{kost.price}
                   </h5>
                   <p>{kost.day}</p>

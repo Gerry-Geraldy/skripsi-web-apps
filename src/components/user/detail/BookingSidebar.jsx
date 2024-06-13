@@ -14,7 +14,7 @@ const BookingSidebar = ({ price }) => {
       </div>
       <button
         onClick={handleBooking}
-        className="w-full bg-orange-500 text-white p-2 rounded-md font-semibold hover:bg-orange-600"
+        className="w-full bg-primary text-white p-2 rounded-md font-semibold hover:bg-orange-600"
       >
         Ajukan Sewa
       </button>

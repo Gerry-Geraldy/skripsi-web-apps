@@ -19,13 +19,13 @@ const Homepage = () => {
       <div className="w-full mb-10">
         <Typography
           variant="h1"
-          className="text-center mt-10 mb-5 text-[30px] md:text-[50px]"
+          className="text-center mt-10 mb-5 text-[30px] md:text-[50px] font-volkhovBold text-headingBlack"
         >
           Explore Popular Region
         </Typography>
         <Typography
           variant="small"
-          className="font-medium mx-auto text-center w-full max-w-[250px] md:max-w-[450px] text-gray-600"
+          className="font-medium mx-auto text-center w-full max-w-[250px] md:max-w-[650px] text-gray-500 font-mulishSemiBold text-[16px]"
         >
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit

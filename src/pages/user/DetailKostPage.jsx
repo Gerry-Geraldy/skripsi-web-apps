@@ -22,7 +22,7 @@ const DetailKostPage = () => {
           key={i}
           icon={faStar}
           className={`h-3 w-3 sm:w-4 sm:h-4 md:w-6 md:h-6 ${
-            i <= rating ? "text-orange-400" : "text-gray-400"
+            i <= rating ? "text-primary" : "text-gray-400"
           }`}
         />
       );

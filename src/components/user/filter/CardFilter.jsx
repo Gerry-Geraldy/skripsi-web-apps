@@ -18,7 +18,7 @@ const CardFilter = ({ kost }) => {
           key={i}
           icon={faStar}
           className={`h-4 w-4 ${
-            i <= rating ? "text-orange-400" : "text-gray-400"
+            i <= rating ? "text-primary" : "text-gray-400"
           }`}
         />
       );
@@ -32,12 +32,12 @@ const CardFilter = ({ kost }) => {
       <img
         src={kost.image}
         alt={kost.name}
-        className="w-full md:w-32 h-32 md:h-32 object-cover mb-4 md:mb-0 mr-0 md:mr-4"
+        className="w-full md:w-48 h-60 md:h-32 object-cover mb-4 md:mb-0 mr-0 md:mr-4"
       />
       <div className="flex justify-between items-center w-full p-4">
         <div className="flex flex-col gap-1">
           <div className="flex flex-row item-center gap-2 ">
-            <p>{renderStars(kost.rating)}</p>
+            <p className="self-center">{renderStars(kost.rating)}</p>
             <span className="text-[14px]">|</span>
             <p className="text-[14px] text-gray-500">
               ( {kost.review} reviews )
@@ -88,7 +88,7 @@ CardFilter.propTypes = {
     name: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     bed: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     day: PropTypes.string.isRequired,
     parking: PropTypes.bool.isRequired,
     size: PropTypes.string.isRequired,

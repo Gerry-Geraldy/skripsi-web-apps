@@ -9,11 +9,11 @@ const AboutDescription = () => {
       <Card className="w-full max-w-5xl transition-transform transform hover:scale-105 shadow-lg hover:shadow-xl">
         <CardBody className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-orange-50 to-white">
           <div className="lg:w-1/3">
-            <Typography variant="small" className="uppercase font-medium text-orange-400 mb-2">
+            <Typography variant="small" className="uppercase font-medium text-primary mb-2">
               <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
               Know About Us
             </Typography>
-            <Typography variant="h3" color="blue-gray" className="font-bold text-orange-400">
+            <Typography variant="h3" color="blue-gray" className="font-bold text-primary">
               We Make Finding and Managing Kosts Easy
             </Typography>
           </div>

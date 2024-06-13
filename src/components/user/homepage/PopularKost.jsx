@@ -6,10 +6,10 @@ const PopularKost = () => {
     <section className="my-10 px-5 w-[90%] mx-auto">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-3">
         <div>
-          <h2 className="text-4xl font-bold font-seriftext-left">
+          <h2 className="text-4xl font-bold font-volkhovBold text-left text-headingBlack">
             Popular Kost
           </h2>
-          <p className="text-gray-600 mt-2 w-full max-w-md text-left">
+          <p className="text-gray-500 mt-2 w-full max-w-md text-left">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit.
           </p>

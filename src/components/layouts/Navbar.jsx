@@ -10,7 +10,7 @@ function NavList({ isMobile, isHomePage, isAboutPage, isScrolled }) {
   return (
     <ul
       className={`my-2 flex ${
-        isMobile ? "flex-col items-center" : "flex-row"
+        isMobile ? "flex-col items-center w-full " : "flex-row"
       } gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:flex lg:mr-0`}
     >
       {routes[0].pages.map((page, index) => (
@@ -18,21 +18,21 @@ function NavList({ isMobile, isHomePage, isAboutPage, isScrolled }) {
           key={index}
           as="li"
           variant="small"
-          className={`p-1 font-medium ${
+          className={`p-2 font-mulishSemiBold text-[13px] hover:bg-primary rounded-lg ${
             (isHomePage || isAboutPage) && !isMobile
               ? "text-white"
               : isScrolled
-              ? "text-black"
+              ? "text-headingBlack hover:text-white"
               : ""
           }`}
         >
           <Link
             to={page.path}
-            className={`p-1 font-medium ${
+            className={`p-2 font-medium  ${
               isScrolled
-                ? "text-black"
+                ? "text-headingBlack hover:text-white"
                 : (isHomePage || isAboutPage) && !isMobile
-                ? "text-white"
+                ? "text-white hover:text-headingBlack"
                 : ""
             }`}
           >
@@ -101,7 +101,7 @@ const Navbar = () => {
         <Typography
           href="/"
           variant="h6"
-          className="cursor-pointer py-1.5"
+          className="cursor-pointer py-1.5 hover:text-white"
           style={{ color: isScrolled ? "#434343" : "" }}
         >
           <img src={logo} alt="Marikost" width={50} height={50} />

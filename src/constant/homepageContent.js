@@ -10,6 +10,9 @@ import {
   region6,
 } from "../../public";
 
+import { faCalendar, faLocationDot, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+
+
 export const jumbotronData = [
   {
     heading: "We Find The Best Boarding House For You",
@@ -28,6 +31,24 @@ export const jumbotronData = [
     content:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: jumbotron3,
+  },
+];
+
+export const cardItems = [
+  {
+    icon: faLocationDot,
+    title: "Location",
+    description: "Search For Boarding House",
+  },
+  {
+    icon: faUserGroup,
+    title: "Size",
+    description: "Family or Teenager Size",
+  },
+  {
+    icon: faCalendar,
+    title: "Booking",
+    description: "Booking a Kost",
   },
 ];
 

@@ -36,11 +36,11 @@ const BannerApp = () => {
             veniam consequat sunt nostrud amet.
           </p>
           <div className="flex space-x-4 mx-auto lg:mx-0">
-            <Button className="bg-orange-500 text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-orange-400 hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
+            <Button className="bg-primary text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-primary hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
               <FontAwesomeIcon icon={faApple} className="w-7 h-7 " />
               Download for iOS
             </Button>
-            <Button className="bg-orange-500 text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-orange-400 hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
+            <Button className="bg-primary text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-primary hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
               <FontAwesomeIcon icon={faMobile} className="w-7 h-7" />
               Download for Android
             </Button>

@@ -29,14 +29,13 @@ const PopularRegion = () => {
       <div className="flex flex-col">
         <div className="grid grid-cols-3 mx-auto sm:grid-cols-4  md:flex lg:flex-row gap-3 justify-center mb-10 p-4 ">
           {regionsContent.map((region, index) => (
-            <Button
+            <button
               key={index}
-              variant="outlined"
-              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] text-center"
+              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] font-mulishBold text-center text-headingBlack outline outline-black outline-1"
               onClick={() => handleRegionSelect(region)}
             >
               {region.name}
-            </Button>
+            </button>
           ))}
         </div>
         <div className="flex flex-col">
@@ -48,10 +47,10 @@ const PopularRegion = () => {
             />
             <div className="p-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[250px] w-[85%] bg-white shadow-xl shadow-gray-200 mx-auto relative bottom-16 rounded-md">
               <div className="flex flex-col">
-                <Typography className="font-bold font-sans text-[45px] lg:text-[60px] ">
+                <Typography className="font-volkhovBold text-[45px] lg:text-[60px] text-headingBlack">
                   {selectedRegion.name}
                 </Typography>
-                <Typography variant="small" className="max-w-[300px]">
+                <Typography variant="small" className="max-w-[350px] font-mulishSemiBold text-[12px] text-gray-500">
                   {selectedRegion.description}
                 </Typography>
               </div>
@@ -61,7 +60,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-500"
+                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-500 font-mulishBold"
                       >
                         <FontAwesomeIcon icon={faBus} className="w-6 h-6" />
                         Public Transportation

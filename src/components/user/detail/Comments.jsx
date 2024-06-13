@@ -8,7 +8,7 @@ const Comments = () => {
       <div className="mb-6">
         <h2 className="text-2xl font-semibold">Customer Review</h2>
         <div className="flex items-center">
-          <span className="text-4xl font-bold text-orange-400">4.30</span>
+          <span className="text-4xl font-bold text-primary">4.30</span>
           <span className="ml-2 text-gray-600">854 Reviews</span>
         </div>
         <div className="flex items-center mt-2">
@@ -18,7 +18,7 @@ const Comments = () => {
               <FontAwesomeIcon
                 key={i}
                 icon={faStar}
-                className={`h-9 w-9 ${i < 4 ? "text-orange-400" : "text-gray-300"}`}
+                className={`h-9 w-9 ${i < 4 ? "text-primary" : "text-gray-300"}`}
               />
             ))}
         </div>
@@ -47,7 +47,7 @@ const Comments = () => {
                     <FontAwesomeIcon
                       key={i}
                       icon={faStar}
-                      className={`h-4 w-4 ${i < comment.rating ? "text-orange-400" : "text-gray-300"}`}
+                      className={`h-4 w-4 ${i < comment.rating ? "text-primary" : "text-gray-300"}`}
                     />
                   ))}
               </div>
