@@ -12,7 +12,7 @@ import Configurator from "./configurator";
 import {
   hoverBgColorClasses,
   hoverTextColorClasses,
-} from "../../styles/colorClasses";
+} from "../../styles/themeColorClasses";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -22,19 +22,19 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/user/home";
   const isAboutPage = location.pathname === "/user/about";
   const [controller, dispatch] = useMaterialTailwindController();
-  const { sidenavColor } = controller;
-
-  const handleWindowResize = () => {
-    setIsMobile(window.innerWidth < 768);
-    if (!isMobile) setOpenNav(false);
-  };
-
-  const handleScroll = () => {
-    const scrollTop = window.pageYOffset;
-    setIsScrolled(scrollTop > 0);
-  };
+  const { themeColor } = controller;
 
   useEffect(() => {
+    const handleWindowResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (!isMobile) setOpenNav(false);
+    };
+
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0);
+    };
+
     window.addEventListener("resize", handleWindowResize);
     window.addEventListener("scroll", handleScroll);
 
@@ -42,7 +42,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleWindowResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   const toggleNav = () => {
     setOpenNav(!openNav);
@@ -93,7 +93,7 @@ const Navbar = () => {
               icon={faCog}
               size="lg"
               className={`ml-4 cursor-pointer ${
-                hoverTextColorClasses[sidenavColor]
+                hoverTextColorClasses[themeColor]
               } ${
                 isScrolled
                   ? "text-headingBlack hover:text-white"
@@ -115,7 +115,7 @@ const Navbar = () => {
                     as="li"
                     variant="small"
                     className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${
-                      hoverBgColorClasses[sidenavColor]
+                      hoverBgColorClasses[themeColor]
                     } ${
                       (isHomePage || isAboutPage) && !isMobile
                         ? "text-white"
@@ -145,7 +145,7 @@ const Navbar = () => {
               icon={faCog}
               size="xl"
               className={`ml-4 cursor-pointer ${
-                hoverTextColorClasses[sidenavColor]
+                hoverTextColorClasses[themeColor]
               } ${
                 isScrolled
                   ? "text-headingBlack hover:scale-105 focus:scale-95"
@@ -171,7 +171,7 @@ const Navbar = () => {
                   as="li"
                   variant="small"
                   className={`p-2 font-mulishSemiBold text-[13px] ${
-                    hoverBgColorClasses[sidenavColor]
+                    hoverBgColorClasses[themeColor]
                   } rounded-lg ${
                     (isHomePage || isAboutPage) && !isMobile
                       ? "text-white"

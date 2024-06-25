@@ -5,11 +5,11 @@ import { useMaterialTailwindController } from "../../../context";
 import {
   buttonColorClasses,
   iconColorClasses,
-} from "../../../styles/colorClasses";
+} from "../../../styles/themeColorClasses";
 
 const SearchCard = () => {
   const [controller] = useMaterialTailwindController();
-  const { sidenavColor } = controller;
+  const { themeColor } = controller;
 
   return (
     <div className="relative lg:flex justify-center bottom-11 w-[70%] mx-auto rounded-2xl bg-white px-5 py-5 items-center shadow-lg shadow-orange-100 hidden">
@@ -19,7 +19,7 @@ const SearchCard = () => {
             <div className="flex flex-row gap-2 items-center">
               <FontAwesomeIcon
                 icon={item.icon}
-                className={`h-6 w-6 ${iconColorClasses[sidenavColor]}`}
+                className={`h-6 w-6 ${iconColorClasses[themeColor]}`}
               />
               <Typography>
                 <p className="text-[14px] font-mulishExtraBold">{item.title}</p>
@@ -31,7 +31,7 @@ const SearchCard = () => {
           </div>
         ))}
         <Button
-          className={`rounded-full px-10 py-4 shadow-md shadow-blue-gray-100 ${buttonColorClasses[sidenavColor]}`}
+          className={`rounded-full px-10 py-4 shadow-md shadow-blue-gray-100 ${buttonColorClasses[themeColor]}`}
         >
           Search
         </Button>

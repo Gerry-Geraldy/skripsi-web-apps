@@ -9,7 +9,7 @@ MaterialTailwind.displayName = "MaterialTailwindContext";
 
 export function MaterialTailwindControllerProvider({ children }) {
   const initialState = {
-    sidenavColor: "primary",
+    themeColor: "primary",
     sidenavType: "white",
     transparentNavbar: true,
     openConfigurator: false,
@@ -28,6 +28,7 @@ export function MaterialTailwindControllerProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useMaterialTailwindController() {
   const context = React.useContext(MaterialTailwind);
 

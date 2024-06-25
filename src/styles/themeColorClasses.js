@@ -21,7 +21,7 @@ export const iconColorClasses = {
 export const hoverBgColorClasses = {
   primary: "hover:bg-primary",
   white: "hover:bg-gray-200",
-  dark: "hover:bg-black-hover",
+  dark: "hover:bg-black",
   green: "hover:bg-green-600",
   orange: "hover:bg-orange-600",
   red: "hover:bg-red-600",
@@ -31,7 +31,7 @@ export const hoverBgColorClasses = {
 export const hoverTextColorClasses = {
   primary: "hover:text-primary",
   white: "hover:text-gray-200",
-  dark: "hover:text-black-hover",
+  dark: "hover:text-black",
   green: "hover:text-green-600",
   orange: "hover:text-orange-600",
   red: "hover:text-red-600",

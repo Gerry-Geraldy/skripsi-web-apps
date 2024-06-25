@@ -1,55 +1,36 @@
+// src/widgets/layout/configurator.jsx
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Button, IconButton, Typography } from "@material-tailwind/react";
 import { useMaterialTailwindController } from "../../context";
 import {
   setOpenConfigurator,
-  setSidenavColor,
+  setThemeColor,
   setSidenavType,
+  setTritanopiaColor,
+  setDeuteranopiacolor,
+  setProtanopiaColor,
 } from "../../context/reducer";
-
-export const sidenavColors = {
-  primary: "from-primary to-orange-600",
-  dark: "from-black to-black border-gray-200",
-  green: "from-green-400 to-green-600",
-  red: "from-red-400 to-red-600",
-  pink: "from-pink-400 to-pink-600",
-};
-
-export const protanopiaColors = {
-  blue: "bg-blue-500",
-  yellow: "bg-yellow-500",
-  black: "bg-black",
-  white: "bg-white",
-};
-
-export const deuteranopiaColors = {
-  blue: "bg-blue-500",
-  yellow: "bg-yellow-500",
-  black: "bg-black",
-  white: "bg-white",
-};
-
-export const tritanopiaColors = {
-  red: "bg-red-500",
-  green: "bg-green-500",
-  black: "bg-black",
-  white: "bg-white",
-};
+import {
+  themeColors,
+  protanopiaColors,
+  deuteranopiaColors,
+  tritanopiaColors,
+} from "../../styles/spanColors";
 
 export function Configurator() {
   const [controller, dispatch] = useMaterialTailwindController();
-  const { openConfigurator, sidenavColor, sidenavType } = controller;
+  const { openConfigurator, themeColor, sidenavType } = controller;
 
   return (
     <aside
-      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-2.5 shadow-lg transition-transform duration-300 ${
+      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-6 py-4 shadow-lg transition-transform duration-300 ${
         openConfigurator ? "translate-x-0" : "translate-x-96"
       }`}
     >
-      <div className="flex items-start justify-between px-6 pt-8 pb-6">
+      <div className="flex items-start justify-between pb-4">
         <div>
           <Typography variant="h5" color="blue-gray">
-            Dashboard Configurator
+             Configurator
           </Typography>
           <Typography className="font-normal text-blue-gray-600">
             See our options.
@@ -63,34 +44,35 @@ export function Configurator() {
           <XMarkIcon strokeWidth={2.5} className="h-5 w-5" />
         </IconButton>
       </div>
-      <div className="py-4 px-6">
-        <div className="mb-6">
-          <Typography variant="h6" color="blue-gray">
+      <div className="py-4">
+        <div className="mb-8">
+          <Typography variant="h6" color="blue-gray" className="mb-3">
             Theme Colors
           </Typography>
-          <div className="mt-3 flex items-center gap-2">
-            {Object.keys(sidenavColors).map((color) => (
+          <div className="flex items-center gap-2">
+            {Object.keys(themeColors).map((color) => (
               <span
                 key={color}
-                className={`h-6 w-6 cursor-pointer rounded-full border bg-gradient-to-br transition-transform hover:scale-105 ${
-                  sidenavColors[color]
+                className={`h-8 w-8 cursor-pointer rounded-full border bg-gradient-to-br transition-transform hover:scale-110 ${
+                  themeColors[color]
                 } ${
-                  sidenavColor === color ? "border-black" : "border-transparent"
+                  themeColor === color ? "border-black" : "border-transparent"
                 }`}
-                onClick={() => setSidenavColor(dispatch, color)}
+                onClick={() => setThemeColor(dispatch, color)}
+                aria-label={`Setel warna sidenav ke ${color}`}
               />
             ))}
           </div>
         </div>
 
-        <div className="mb-6">
-          <Typography variant="h6" color="blue-gray">
-            Sidenav Types
+        <div className="mb-8">
+          <Typography variant="h6" color="blue-gray" className="mb-3">
+            Theme Types
           </Typography>
-          <Typography variant="small" color="gray">
-            Choose between 3 different sidenav types.
+          <Typography variant="small" color="gray" className="mb-3">
+            Choose between 3 different theme types.
           </Typography>
-          <div className="mt-3 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Button
               variant={sidenavType === "dark" ? "gradient" : "outlined"}
               onClick={() => setSidenavType(dispatch, "dark")}
@@ -112,48 +94,51 @@ export function Configurator() {
           </div>
         </div>
 
-        <div >
-          <Typography variant="h6" color="blue-gray">
-            Color Blindness
+        <div>
+          <Typography variant="h6" color="blue-gray" className="mb-3">
+            Theme For Color Blindness
           </Typography>
 
-          <div className="mt-6">
-            <Typography variant="small" color="blue-gray">
+          <div className="mb-6">
+            <Typography variant="h6" color="blue-gray" className="mb-2">
               Protanopia
             </Typography>
-            <div className="mt-3 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               {Object.keys(protanopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-6 w-6 cursor-pointer rounded-full border transition-transform hover:scale-105 ${protanopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${protanopiaColors[color]}`}
+                  onClick={() => setProtanopiaColor(dispatch, color)}
                 />
               ))}
             </div>
           </div>
 
-          <div className="mt-6">
-            <Typography variant="small" color="blue-gray">
+          <div className="mb-6">
+            <Typography variant="h6" color="blue-gray" className="mb-2">
               Deuteranopia
             </Typography>
-            <div className="mt-3 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               {Object.keys(deuteranopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-6 w-6 cursor-pointer rounded-full border transition-transform hover:scale-105 ${deuteranopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${deuteranopiaColors[color]}`}
+                  onClick={() => setDeuteranopiacolor(dispatch, color)}
                 />
               ))}
             </div>
           </div>
 
-          <div className="mt-6">
-            <Typography variant="small" color="blue-gray">
+          <div className="mb-6">
+            <Typography variant="h6" color="blue-gray" className="mb-2">
               Tritanopia
             </Typography>
-            <div className="mt-3 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               {Object.keys(tritanopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-6 w-6 cursor-pointer rounded-full border transition-transform hover:scale-105 ${tritanopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${tritanopiaColors[color]}`}
+                  onClick={() => setTritanopiaColor(dispatch, color)}
                 />
               ))}
             </div>
