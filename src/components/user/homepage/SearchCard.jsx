@@ -1,7 +1,16 @@
 import { Typography, Button } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cardItems } from "../../../constant/homepageContent";
+import { useMaterialTailwindController } from "../../../context";
+import {
+  buttonColorClasses,
+  iconColorClasses,
+} from "../../../styles/colorClasses";
+
 const SearchCard = () => {
+  const [controller] = useMaterialTailwindController();
+  const { sidenavColor } = controller;
+
   return (
     <div className="relative lg:flex justify-center bottom-11 w-[70%] mx-auto rounded-2xl bg-white px-5 py-5 items-center shadow-lg shadow-orange-100 hidden">
       <div className="flex flex-row items-center gap-[60px]">
@@ -10,7 +19,7 @@ const SearchCard = () => {
             <div className="flex flex-row gap-2 items-center">
               <FontAwesomeIcon
                 icon={item.icon}
-                className="h-6 w-6 text-primary"
+                className={`h-6 w-6 ${iconColorClasses[sidenavColor]}`}
               />
               <Typography>
                 <p className="text-[14px] font-mulishExtraBold">{item.title}</p>
@@ -21,7 +30,9 @@ const SearchCard = () => {
             </p>
           </div>
         ))}
-        <Button className="rounded-full px-10 py-4 bg-yellow-700 shadow-md shadow-blue-gray-100">
+        <Button
+          className={`rounded-full px-10 py-4 shadow-md shadow-blue-gray-100 ${buttonColorClasses[sidenavColor]}`}
+        >
           Search
         </Button>
       </div>

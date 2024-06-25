@@ -30,3 +30,8 @@ html{
       top: 0;
       width: 100%;
 }
+
+.theme-sidebar {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden; /* Pastikan konten di luar max-height disembunyikan */
+}

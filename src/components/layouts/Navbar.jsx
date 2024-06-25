@@ -4,52 +4,15 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import routes from "../../routes";
 import { logo } from "../../../public";
-import PropTypes from "prop-types";
-
-function NavList({ isMobile, isHomePage, isAboutPage, isScrolled }) {
-  return (
-    <ul
-      className={`my-2 flex ${
-        isMobile ? "flex-col items-center w-full " : "flex-row"
-      } gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:flex lg:mr-0`}
-    >
-      {routes[0].pages.map((page, index) => (
-        <Typography
-          key={index}
-          as="li"
-          variant="small"
-          className={`p-2 font-mulishSemiBold text-[13px] hover:bg-primary rounded-lg ${
-            (isHomePage || isAboutPage) && !isMobile
-              ? "text-white"
-              : isScrolled
-              ? "text-headingBlack hover:text-white"
-              : ""
-          }`}
-        >
-          <Link
-            to={page.path}
-            className={`p-2 font-medium  ${
-              isScrolled
-                ? "text-headingBlack hover:text-white"
-                : (isHomePage || isAboutPage) && !isMobile
-                ? "text-white hover:text-headingBlack"
-                : ""
-            }`}
-          >
-            {page.name}
-          </Link>
-        </Typography>
-      ))}
-    </ul>
-  );
-}
-
-NavList.propTypes = {
-  isMobile: PropTypes.bool.isRequired,
-  isHomePage: PropTypes.bool.isRequired,
-  isAboutPage: PropTypes.bool.isRequired,
-  isScrolled: PropTypes.bool.isRequired,
-};
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { useMaterialTailwindController } from "../../context";
+import { setOpenConfigurator } from "../../context/reducer";
+import Configurator from "./configurator";
+import {
+  hoverBgColorClasses,
+  hoverTextColorClasses,
+} from "../../styles/colorClasses";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -58,6 +21,8 @@ const Navbar = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/user/home";
   const isAboutPage = location.pathname === "/user/about";
+  const [controller, dispatch] = useMaterialTailwindController();
+  const { sidenavColor } = controller;
 
   const handleWindowResize = () => {
     setIsMobile(window.innerWidth < 768);
@@ -77,8 +42,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleWindowResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMobile]);
+  }, []);
 
   const toggleNav = () => {
     setOpenNav(!openNav);
@@ -107,39 +71,130 @@ const Navbar = () => {
           <img src={logo} alt="Marikost" width={50} height={50} />
         </Typography>
         {isMobile ? (
-          <IconButton
-            variant="text"
-            className="h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            ripple={false}
-            onClick={toggleNav}
-          >
-            {openNav ? (
-              <XMarkIcon
-                className="h-6 w-6"
-                strokeWidth={2}
-                onClick={closeNav}
-              />
-            ) : (
-              <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-            )}
-          </IconButton>
+          <div className="flex items-center">
+            <IconButton
+              variant="text"
+              className="h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              ripple={false}
+              onClick={toggleNav}
+            >
+              {openNav ? (
+                <XMarkIcon
+                  className="h-6 w-6"
+                  strokeWidth={2}
+                  onClick={closeNav}
+                />
+              ) : (
+                <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+              )}
+            </IconButton>
+            <Configurator />
+            <FontAwesomeIcon
+              icon={faCog}
+              size="lg"
+              className={`ml-4 cursor-pointer ${
+                hoverTextColorClasses[sidenavColor]
+              } ${
+                isScrolled
+                  ? "text-headingBlack hover:text-white"
+                  : (isHomePage || isAboutPage) && !isMobile
+                  ? "text-white hover:text-headingBlack"
+                  : ""
+              }`}
+              onClick={() => setOpenConfigurator(dispatch, true)}
+            />
+          </div>
         ) : (
-          <NavList
-            isMobile={false}
-            isHomePage={isHomePage}
-            isAboutPage={isAboutPage}
-            isScrolled={isScrolled}
-          />
+          <div className="flex items-center justify-end">
+            <ul className="my-2 flex flex-row gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:flex lg:mr-0">
+              {routes[0].pages
+                .filter((page) => !page.isDetailPage)
+                .map((page, index) => (
+                  <Typography
+                    key={index}
+                    as="li"
+                    variant="small"
+                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${
+                      hoverBgColorClasses[sidenavColor]
+                    } ${
+                      (isHomePage || isAboutPage) && !isMobile
+                        ? "text-white"
+                        : isScrolled
+                        ? "text-headingBlack hover:text-white"
+                        : ""
+                    }`}
+                  >
+                    <Link
+                      to={page.path}
+                      className={`p-2 font-medium ${
+                        isScrolled
+                          ? "text-headingBlack hover:text-white"
+                          : (isHomePage || isAboutPage) && !isMobile
+                          ? "text-white "
+                          : ""
+                      }`}
+                    >
+                      {page.name}
+                    </Link>
+                  </Typography>
+                ))}
+            </ul>
+
+            <Configurator />
+            <FontAwesomeIcon
+              icon={faCog}
+              size="xl"
+              className={`ml-4 cursor-pointer ${
+                hoverTextColorClasses[sidenavColor]
+              } ${
+                isScrolled
+                  ? "text-headingBlack hover:scale-105 focus:scale-95"
+                  : (isHomePage || isAboutPage) && !isMobile
+                  ? "text-white hover:text-headingBlack"
+                  : ""
+              }`}
+              onClick={() => setOpenConfigurator(dispatch, true)}
+            />
+          </div>
         )}
       </div>
       {isMobile && (
         <Collapse open={openNav}>
-          <NavList
-            isMobile={true}
-            isHomePage={isHomePage}
-            isAboutPage={isAboutPage}
-            isScrolled={isScrolled}
-          />
+          <ul
+            className={`my-2 flex flex-col items-center w-full gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 lg:flex lg:mr-0`}
+          >
+            {routes[0].pages
+              .filter((page) => !page.isDetailPage)
+              .map((page, index) => (
+                <Typography
+                  key={index}
+                  as="li"
+                  variant="small"
+                  className={`p-2 font-mulishSemiBold text-[13px] ${
+                    hoverBgColorClasses[sidenavColor]
+                  } rounded-lg ${
+                    (isHomePage || isAboutPage) && !isMobile
+                      ? "text-white"
+                      : isScrolled
+                      ? "text-headingBlack hover:text-white"
+                      : ""
+                  }`}
+                >
+                  <Link
+                    to={page.path}
+                    className={`p-2 font-medium  ${
+                      isScrolled
+                        ? "text-headingBlack hover:text-white"
+                        : (isHomePage || isAboutPage) && !isMobile
+                        ? "text-white hover:text-headingBlack"
+                        : ""
+                    }`}
+                  >
+                    {page.name}
+                  </Link>
+                </Typography>
+              ))}
+          </ul>
         </Collapse>
       )}
     </section>

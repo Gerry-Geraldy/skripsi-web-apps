@@ -34,8 +34,10 @@ const routes = [
         element: <Help />,
       },
       {
+        name: "Detail",
         path: "/user/kost/:id",
         element: <DetailKostPage />,
+        isDetailPage: true,
       },
     ],
   },
