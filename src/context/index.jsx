@@ -13,6 +13,9 @@ export function MaterialTailwindControllerProvider({ children }) {
     sidenavType: "white",
     transparentNavbar: true,
     openConfigurator: false,
+    tritanopiaColor: null,
+    protanopiaColor: null,
+    deuteranopiaColor: null,
   };
 
   const [controller, dispatch] = React.useReducer(reducer, initialState);

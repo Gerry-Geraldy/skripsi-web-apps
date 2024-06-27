@@ -9,10 +9,7 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { useMaterialTailwindController } from "../../context";
 import { setOpenConfigurator } from "../../context/reducer";
 import Configurator from "./configurator";
-import {
-  hoverBgColorClasses,
-  hoverTextColorClasses,
-} from "../../styles/themeColorClasses";
+import useThemeSwitcherConfig from "../../utils/themeSwitcherConfig";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -22,7 +19,14 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/user/home";
   const isAboutPage = location.pathname === "/user/about";
   const [controller, dispatch] = useMaterialTailwindController();
-  const { themeColor } = controller;
+  const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
+    controller;
+  const { currentHoverBgColor, currentHoverTextColor } = useThemeSwitcherConfig(
+    themeColor,
+    tritanopiaColor,
+    protanopiaColor,
+    deuteranopiaColor
+  );
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -92,9 +96,7 @@ const Navbar = () => {
             <FontAwesomeIcon
               icon={faCog}
               size="lg"
-              className={`ml-4 cursor-pointer ${
-                hoverTextColorClasses[themeColor]
-              } ${
+              className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
                 isScrolled
                   ? "text-headingBlack hover:text-white"
                   : (isHomePage || isAboutPage) && !isMobile
@@ -114,9 +116,7 @@ const Navbar = () => {
                     key={index}
                     as="li"
                     variant="small"
-                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${
-                      hoverBgColorClasses[themeColor]
-                    } ${
+                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${currentHoverBgColor} ${
                       (isHomePage || isAboutPage) && !isMobile
                         ? "text-white"
                         : isScrolled
@@ -144,9 +144,7 @@ const Navbar = () => {
             <FontAwesomeIcon
               icon={faCog}
               size="xl"
-              className={`ml-4 cursor-pointer ${
-                hoverTextColorClasses[themeColor]
-              } ${
+              className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
                 isScrolled
                   ? "text-headingBlack hover:scale-105 focus:scale-95"
                   : (isHomePage || isAboutPage) && !isMobile
@@ -170,9 +168,7 @@ const Navbar = () => {
                   key={index}
                   as="li"
                   variant="small"
-                  className={`p-2 font-mulishSemiBold text-[13px] ${
-                    hoverBgColorClasses[themeColor]
-                  } rounded-lg ${
+                  className={`p-2 font-mulishSemiBold text-[13px] ${currentHoverBgColor} rounded-lg ${
                     (isHomePage || isAboutPage) && !isMobile
                       ? "text-white"
                       : isScrolled

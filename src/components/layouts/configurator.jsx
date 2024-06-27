@@ -7,7 +7,7 @@ import {
   setThemeColor,
   setSidenavType,
   setTritanopiaColor,
-  setDeuteranopiacolor,
+  setDeuteranopiaColor,
   setProtanopiaColor,
 } from "../../context/reducer";
 import {
@@ -15,7 +15,7 @@ import {
   protanopiaColors,
   deuteranopiaColors,
   tritanopiaColors,
-} from "../../styles/spanColors";
+} from "../../utils/styles/spanColors";
 
 export function Configurator() {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -30,7 +30,7 @@ export function Configurator() {
       <div className="flex items-start justify-between pb-4">
         <div>
           <Typography variant="h5" color="blue-gray">
-             Configurator
+            Configurator
           </Typography>
           <Typography className="font-normal text-blue-gray-600">
             See our options.
@@ -98,7 +98,20 @@ export function Configurator() {
           <Typography variant="h6" color="blue-gray" className="mb-3">
             Theme For Color Blindness
           </Typography>
-
+          <div className="mb-6">
+            <Typography variant="h6" color="blue-gray" className="mb-2">
+              Tritanopia
+            </Typography>
+            <div className="flex items-center gap-2">
+              {Object.keys(tritanopiaColors).map((color) => (
+                <span
+                  key={color}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${tritanopiaColors[color]}`}
+                  onClick={() => setTritanopiaColor(dispatch, color)}
+                />
+              ))}
+            </div>
+          </div>
           <div className="mb-6">
             <Typography variant="h6" color="blue-gray" className="mb-2">
               Protanopia
@@ -123,22 +136,7 @@ export function Configurator() {
                 <span
                   key={color}
                   className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${deuteranopiaColors[color]}`}
-                  onClick={() => setDeuteranopiacolor(dispatch, color)}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              Tritanopia
-            </Typography>
-            <div className="flex items-center gap-2">
-              {Object.keys(tritanopiaColors).map((color) => (
-                <span
-                  key={color}
-                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${tritanopiaColors[color]}`}
-                  onClick={() => setTritanopiaColor(dispatch, color)}
+                  onClick={() => setDeuteranopiaColor(dispatch, color)}
                 />
               ))}
             </div>
