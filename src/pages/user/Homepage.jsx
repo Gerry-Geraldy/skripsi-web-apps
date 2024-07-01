@@ -19,7 +19,7 @@ const Homepage = () => {
       <div className="w-full mb-10">
         <Typography
           variant="h1"
-          className="text-center mt-10 mb-5 text-[30px] md:text-[50px] font-volkhovBold text-headingBlack"
+          className="text-center mt-10 mb-5 text-[30px] md:text-[50px] font-volkhovBold text-headingBlack dark:text-white"
         >
           Explore Popular Region
         </Typography>

@@ -3,8 +3,20 @@ import { region1 } from "../../../../public";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
 import { faMobile } from "@fortawesome/free-solid-svg-icons/faMobile";
+import { useMaterialTailwindController } from "../../../context";
+import useThemeSwitcherConfig from "../../../utils/themeSwitcherConfig";
 
 const BannerApp = () => {
+  const [controller] = useMaterialTailwindController();
+  const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
+    controller;
+
+  const { currentButtonColor } = useThemeSwitcherConfig(
+    themeColor,
+    tritanopiaColor,
+    protanopiaColor,
+    deuteranopiaColor
+  );
   return (
     <section className="relative mt-14 h-[500px] flex items-center justify-center bg-gray-200">
       <img
@@ -36,11 +48,11 @@ const BannerApp = () => {
             veniam consequat sunt nostrud amet.
           </p>
           <div className="flex space-x-4 mx-auto lg:mx-0">
-            <Button className="bg-primary text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-primary hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
+            <Button className={`${currentButtonColor} text-white px-6 py-4 rounded-full shadow-md flex flex-row gap-2 items-center`}>
               <FontAwesomeIcon icon={faApple} className="w-7 h-7 " />
               Download for iOS
             </Button>
-            <Button className="bg-primary text-white px-6 py-4 rounded-full shadow-md hover:bg-orange-700 shadow-primary hover:shadow-md hover:shadow-orange-800 flex flex-row gap-2 items-center">
+            <Button className={`${currentButtonColor} text-white px-6 py-4 rounded-full shadow-md flex flex-row gap-2 items-center`}>
               <FontAwesomeIcon icon={faMobile} className="w-7 h-7" />
               Download for Android
             </Button>

@@ -8,9 +8,25 @@ import {
 import { banner1 } from "../../../../public"; // adjust this import if needed
 import { kosts } from "../../../constant/infoKostContent";
 import { useEffect, useState } from "react";
+import { useMaterialTailwindController } from "../../../context";
+import useThemeSwitcherConfig from "../../../utils/themeSwitcherConfig";
 
 
 const BannerKost = () => {
+  const [controller] = useMaterialTailwindController();
+  const {
+    themeColor,
+    tritanopiaColor,
+    protanopiaColor,
+    deuteranopiaColor,
+  } = controller;
+
+  const { currentButtonColor } = useThemeSwitcherConfig(
+    themeColor,
+    tritanopiaColor,
+    protanopiaColor,
+    deuteranopiaColor
+  );
   const [kostData, setKostData] = useState(null);
 
   useEffect(() => {
@@ -42,7 +58,7 @@ const BannerKost = () => {
   }
 
   return (
-    <section className="relative mt-24 shadow-sm h-[450px] w-full">
+    <section className="relative mt-24 shadow-sm dark:shadow-none h-[450px] w-full">
       <div className="relative h-[720px] lg:h-full w-full">
         <img
           src={banner1}
@@ -76,7 +92,7 @@ const BannerKost = () => {
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
             </p>
             <div className="flex flex-row justify-start items-center gap-10">
-              <button className="mt-4 bg-primary px-8 py-3 rounded-full shadow-md hover:shadow-md hover:shadow-orange-800 hover:bg-orange-700 shadow-primary text-center font-semibold text-headingBlack">
+              <button className={`${currentButtonColor} mt-4  px-8 py-3 rounded-full shadow-md hover:shadow-md  text-center font-semibold text-white`}>
                 Book Now
               </button>
               <div className="mt-4 flex space-x-2">

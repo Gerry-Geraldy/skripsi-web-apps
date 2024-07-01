@@ -19,7 +19,7 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/user/home";
   const isAboutPage = location.pathname === "/user/about";
   const [controller, dispatch] = useMaterialTailwindController();
-  const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
+  const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor, sidenavType } =
     controller;
   const { currentHoverBgColor, currentHoverTextColor } = useThemeSwitcherConfig(
     themeColor,
@@ -59,18 +59,17 @@ const Navbar = () => {
   return (
     <section
       className={`mx-auto max-w-screen p-5 relative z-10 tw-full navbar ${
-        isMobile ? "bg-white" : ""
-      } ${isScrolled ? "bg-white shadow-sm rounded-md shadow-gray-600" : ""}`}
+        isMobile ? (sidenavType === 'dark' ? 'bg-gray-800' : 'bg-white') : ''
+      } ${isScrolled ? (sidenavType === 'dark' ? 'bg-gray-800 shadow-gray-700' : 'bg-white shadow-gray-600') : ''}`}
       style={{
         transition: "background-color 0.3s ease-in-out",
       }}
     >
-      <div className="flex items-center justify-between text-blue-gray-900">
+      <div className={`flex items-center justify-between ${sidenavType === 'dark' ? 'text-white' : 'text-blue-gray-900'}`}>
         <Typography
           href="/"
           variant="h6"
           className="cursor-pointer py-1.5 hover:text-white"
-          style={{ color: isScrolled ? "#434343" : "" }}
         >
           <img src={logo} alt="Marikost" width={50} height={50} />
         </Typography>
@@ -98,10 +97,10 @@ const Navbar = () => {
               size="lg"
               className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
                 isScrolled
-                  ? "text-headingBlack hover:text-white"
+                  ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
                   : (isHomePage || isAboutPage) && !isMobile
-                  ? "text-white hover:text-headingBlack"
-                  : ""
+                  ? 'hover:text-white'
+                  : ''
               }`}
               onClick={() => setOpenConfigurator(dispatch, true)}
             />
@@ -118,20 +117,20 @@ const Navbar = () => {
                     variant="small"
                     className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${currentHoverBgColor} ${
                       (isHomePage || isAboutPage) && !isMobile
-                        ? "text-white"
+                        ? 'text-white'
                         : isScrolled
-                        ? "text-headingBlack hover:text-white"
-                        : ""
+                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
+                        : ''
                     }`}
                   >
                     <Link
                       to={page.path}
                       className={`p-2 font-medium ${
                         isScrolled
-                          ? "text-headingBlack hover:text-white"
+                          ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
                           : (isHomePage || isAboutPage) && !isMobile
-                          ? "text-white "
-                          : ""
+                          ? 'text-white '
+                          : ''
                       }`}
                     >
                       {page.name}
@@ -146,10 +145,10 @@ const Navbar = () => {
               size="xl"
               className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
                 isScrolled
-                  ? "text-headingBlack hover:scale-105 focus:scale-95"
+                  ? (sidenavType === 'dark' ? 'text-white hover:scale-105 focus:scale-95' : 'text-headingBlack hover:scale-105 focus:scale-95')
                   : (isHomePage || isAboutPage) && !isMobile
-                  ? "text-white hover:text-headingBlack"
-                  : ""
+                  ? 'text-white hover:text-headingBlack'
+                  : ''
               }`}
               onClick={() => setOpenConfigurator(dispatch, true)}
             />
@@ -170,20 +169,20 @@ const Navbar = () => {
                   variant="small"
                   className={`p-2 font-mulishSemiBold text-[13px] ${currentHoverBgColor} rounded-lg ${
                     (isHomePage || isAboutPage) && !isMobile
-                      ? "text-white"
+                      ? 'text-white'
                       : isScrolled
-                      ? "text-headingBlack hover:text-white"
-                      : ""
+                      ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
+                      : ''
                   }`}
                 >
                   <Link
                     to={page.path}
-                    className={`p-2 font-medium  ${
+                    className={`p-2 font-medium ${
                       isScrolled
-                        ? "text-headingBlack hover:text-white"
+                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
                         : (isHomePage || isAboutPage) && !isMobile
-                        ? "text-white hover:text-headingBlack"
-                        : ""
+                        ? 'text-white hover:text-headingBlack'
+                        : ''
                     }`}
                   >
                     {page.name}

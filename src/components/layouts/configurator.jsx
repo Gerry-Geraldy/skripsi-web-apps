@@ -80,12 +80,6 @@ export function Configurator() {
               Dark
             </Button>
             <Button
-              variant={sidenavType === "transparent" ? "gradient" : "outlined"}
-              onClick={() => setSidenavType(dispatch, "transparent")}
-            >
-              Transparent
-            </Button>
-            <Button
               variant={sidenavType === "white" ? "gradient" : "outlined"}
               onClick={() => setSidenavType(dispatch, "white")}
             >

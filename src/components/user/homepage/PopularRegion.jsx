@@ -23,6 +23,7 @@ const PopularRegion = () => {
   const handleRegionSelect = (region) => {
     setSelectedRegion(region);
   };
+  
 
   return (
     <section>
@@ -31,7 +32,7 @@ const PopularRegion = () => {
           {regionsContent.map((region, index) => (
             <button
               key={index}
-              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] font-mulishBold text-center text-headingBlack outline outline-black outline-1"
+              className="focus:bg-blue-gray-900 rounded-full px-8 py-4 w-[120px] font-mulishBold text-center dark:text-white text-headingBlack outline dark:outline-white dark:bg-gray-800 outline-black outline-1"
               onClick={() => handleRegionSelect(region)}
             >
               {region.name}
@@ -45,12 +46,12 @@ const PopularRegion = () => {
               alt={selectedRegion.name}
               className=" h-[350px] md:h-[450px] object-cover bg-center w-[90%] mx-auto"
             />
-            <div className="p-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[250px] w-[85%] bg-white shadow-xl shadow-gray-200 mx-auto relative bottom-16 rounded-md">
-              <div className="flex flex-col">
-                <Typography className="font-volkhovBold text-[45px] lg:text-[60px] text-headingBlack">
+            <div className="p-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[250px] w-[85%] bg-white dark:bg-gray-800 shadow-xl dark:shadow-none shadow-gray-200 mx-auto relative bottom-16 rounded-md">
+              <div className="flex flex-col ">
+                <Typography className="font-volkhovBold text-[45px] lg:text-[60px] text-headingBlack dark:text-white">
                   {selectedRegion.name}
                 </Typography>
-                <Typography variant="small" className="max-w-[350px] font-mulishSemiBold text-[12px] text-gray-500">
+                <Typography variant="small" className="max-w-[350px] font-mulishSemiBold text-[12px] text-gray-500 dark:text-white">
                   {selectedRegion.description}
                 </Typography>
               </div>
@@ -60,7 +61,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-500 font-mulishBold"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-500 font-mulishBold dark:bg-gray-900"
                       >
                         <FontAwesomeIcon icon={faBus} className="w-6 h-6" />
                         Public Transportation
@@ -76,7 +77,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-green-500"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-green-500 dark:bg-gray-900"
                       >
                         <FontAwesomeIcon icon={faEarth} className="w-6 h-6" />
                         Nature & Adventure
@@ -90,7 +91,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-orange-500"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-orange-500 dark:bg-gray-900"
                       >
                         <FontAwesomeIcon icon={faTaxi} className="w-6 h-6" />
                         Private Transportation
@@ -106,7 +107,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-red-500"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-red-500 dark:bg-gray-900"
                       >
                         <FontAwesomeIcon
                           icon={faBriefcase}
@@ -123,7 +124,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-blue-500"
+                        className=" dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-blue-500 dark:bg-gray-900"
                       >
                         <FontAwesomeIcon icon={faMapLocationDot} />
                         Local Visit
