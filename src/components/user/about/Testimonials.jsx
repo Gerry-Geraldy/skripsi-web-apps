@@ -5,7 +5,7 @@ import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Testimonials = () => {
   return (
-    <section className="py-10 bg-gray-100">
+    <section className="py-10 bg-gray-100 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <Typography variant="h4" className="text-center mb-10 text-primary">
           Testimonials
@@ -14,7 +14,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white flex-shrink-0 p-6 rounded-lg shadow-lg text-center max-w-[180px] lg:max-w-xs transition-transform transform hover:scale-105"
+              className="bg-white dark:bg-gray-800 flex-shrink-0 p-6 rounded-lg shadow-lg text-center max-w-[180px] lg:max-w-xs transition-transform transform hover:scale-105"
             >
               <div className="flex justify-center mb-4">
                 <FontAwesomeIcon
@@ -30,7 +30,7 @@ const Testimonials = () => {
               <Typography className="font-semibold text-primary">
                 {testimonial.name}
               </Typography>
-              <Typography className="text-gray-700 mt-2">
+              <Typography className="text-gray-700 mt-2 dark:text-white">
                 {testimonial.comment}
               </Typography>
             </div>

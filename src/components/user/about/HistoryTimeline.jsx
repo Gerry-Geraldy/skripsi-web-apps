@@ -5,7 +5,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const HistoryTimeline = () => {
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <Typography variant="h4" className="text-center mb-10 text-blue-600">
           Our History
@@ -20,7 +20,7 @@ const HistoryTimeline = () => {
               } items-center w-full`}
             >
               <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                <div className="bg-white p-6 rounded-lg shadow-lg relative">
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative">
                   <div className="absolute -left-2 top-1/2 transform -translate-y-1/2">
                     <FontAwesomeIcon
                       icon={faCircle}
@@ -33,7 +33,7 @@ const HistoryTimeline = () => {
                   >
                     {event.year}
                   </Typography>
-                  <Typography className="text-gray-700">
+                  <Typography className="text-gray-700 dark:text-white">
                     {event.description}
                   </Typography>
                 </div>

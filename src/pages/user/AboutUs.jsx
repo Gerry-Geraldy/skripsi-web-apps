@@ -10,7 +10,7 @@ import {
 
 const AboutUs = () => {
   return (
-    <section className="">
+    <section className="dark:bg-gray-900">
       <AboutJumbotron />
       <AboutDescription />
       <AboutVideo />
