@@ -25,10 +25,10 @@ const SideBarFilter = ({ filters, setFilters, includesOptions }) => {
   };
 
   return (
-    <div className="w-full md:w-72 p-4 border rounded-md mb-4 md:mb-0 mt-[60px] bg-white">
-      <h3 className="text-xl font-semibold mb-4">Filters</h3>
+    <div className="w-full md:w-72 p-4 border dark:border-none rounded-md mb-4 md:mb-0 mt-[60px] bg-white dark:bg-gray-800">
+      <h3 className="text-xl font-semibold mb-4 dark:text-white">Filters</h3>
       <label className="block mb-4">
-        <span className="text-gray-700">Price:</span>
+        <span className="text-gray-700 dark:text-white">Price:</span>
         <input
           type="number"
           name="price"
@@ -37,11 +37,11 @@ const SideBarFilter = ({ filters, setFilters, includesOptions }) => {
             setPrice(e.target.value);
             handleFilterChange(e);
           }}
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-none rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
         />
       </label>
       <div className="block mb-4">
-        <span className="text-gray-700">Includes:</span>
+        <span className="text-gray-700 dark:text-white">Includes:</span>
         {includesOptions.map((include, index) => (
           <label key={index} className="block mt-1">
             <input
@@ -50,9 +50,9 @@ const SideBarFilter = ({ filters, setFilters, includesOptions }) => {
               value={include.name}
               onChange={handleFilterChange}
               checked={selectedIncludes.includes(include.name)}
-              className="mr-2 leading-tight"
+              className="mr-2 leading-tight "
             />
-            <span className="text-gray-700">{include.name}</span>
+            <span className="text-gray-700 dark:text-white">{include.name}</span>
           </label>
         ))}
       </div>

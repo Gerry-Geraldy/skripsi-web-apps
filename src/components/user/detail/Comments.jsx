@@ -4,12 +4,12 @@ import { commentsData } from "../../../constant/detailKostContent";
 
 const Comments = () => {
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg w-[90%] mx-auto mt-10">
+    <div className="p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg w-[90%] mx-auto mt-10">
       <div className="mb-6">
-        <h2 className="text-2xl font-semibold">Customer Review</h2>
+        <h2 className="text-3xl font-semibold font-volkhovBold dark:text-white mb-5">Customer Review</h2>
         <div className="flex items-center">
           <span className="text-4xl font-bold text-primary">4.30</span>
-          <span className="ml-2 text-gray-600">854 Reviews</span>
+          <span className="ml-2 text-gray-600 dark:text-white">( 854 ) Reviews</span>
         </div>
         <div className="flex items-center mt-2">
           {Array(5)
@@ -29,17 +29,17 @@ const Comments = () => {
             <img
               src={comment.avatar}
               alt={comment.name}
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-12 h-12 rounded-full object-cover dark:"
             />
             <div>
               <div className="flex items-center">
-                <h3 className="text-lg font-semibold">{comment.name}</h3>
+                <h3 className="text-lg font-semibold dark:text-white">{comment.name}</h3>
                 <FontAwesomeIcon
                   icon={faCheckCircle}
                   className="ml-2 text-blue-500"
                 />
               </div>
-              <p className="text-gray-600 text-sm">{comment.date}</p>
+              <p className="text-gray-600 dark:text-white text-sm">{comment.date}</p>
               <div className="flex items-center mt-1">
                 {Array(5)
                   .fill(0)
@@ -51,9 +51,9 @@ const Comments = () => {
                     />
                   ))}
               </div>
-              <p className="mt-2 text-gray-700">{comment.comment}</p>
+              <p className="mt-2 text-gray-700 dark:text-gray-300">{comment.comment}</p>
               <div className="mt-2 flex items-center text-sm">
-                <span className="text-gray-500 mr-2">Helpful?</span>
+                <span className="text-gray-500 mr-2 dark:text-gray-300">Helpful?</span>
                 <button className="text-green-500 font-semibold">Yes</button>
               </div>
             </div>

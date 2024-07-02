@@ -23,16 +23,16 @@ export function Configurator() {
 
   return (
     <aside
-      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-6 py-4 shadow-lg transition-transform duration-300 ${
+      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-6 py-4 shadow-lg transition-transform duration-300 dark:bg-gray-800 ${
         openConfigurator ? "translate-x-0" : "translate-x-96"
       }`}
     >
       <div className="flex items-start justify-between pb-4">
         <div>
-          <Typography variant="h5" color="blue-gray">
+          <Typography variant="h5" color="blue-gray" className="dark:text-white">
             Configurator
           </Typography>
-          <Typography className="font-normal text-blue-gray-600">
+          <Typography className="font-normal text-blue-gray-600 dark:text-gray-300">
             See our options.
           </Typography>
         </div>
@@ -46,7 +46,7 @@ export function Configurator() {
       </div>
       <div className="py-4">
         <div className="mb-8">
-          <Typography variant="h6" color="blue-gray" className="mb-3">
+          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
             Theme Colors
           </Typography>
           <div className="flex items-center gap-2">
@@ -66,21 +66,23 @@ export function Configurator() {
         </div>
 
         <div className="mb-8">
-          <Typography variant="h6" color="blue-gray" className="mb-3">
+          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
             Theme Types
           </Typography>
-          <Typography variant="small" color="gray" className="mb-3">
+          <Typography variant="small" color="gray" className="mb-3 dark:text-gray-300">
             Choose between 3 different theme types.
           </Typography>
           <div className="flex items-center gap-2">
             <Button
               variant={sidenavType === "dark" ? "gradient" : "outlined"}
+              className="dark:text-white"
               onClick={() => setSidenavType(dispatch, "dark")}
             >
               Dark
             </Button>
             <Button
               variant={sidenavType === "white" ? "gradient" : "outlined"}
+              className="dark:text-white"
               onClick={() => setSidenavType(dispatch, "white")}
             >
               White
@@ -89,11 +91,11 @@ export function Configurator() {
         </div>
 
         <div>
-          <Typography variant="h6" color="blue-gray" className="mb-3">
+          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
             Theme For Color Blindness
           </Typography>
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
+            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
               Tritanopia
             </Typography>
             <div className="flex items-center gap-2">
@@ -107,7 +109,7 @@ export function Configurator() {
             </div>
           </div>
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
+            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
               Protanopia
             </Typography>
             <div className="flex items-center gap-2">
@@ -122,7 +124,7 @@ export function Configurator() {
           </div>
 
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
+            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
               Deuteranopia
             </Typography>
             <div className="flex items-center gap-2">
