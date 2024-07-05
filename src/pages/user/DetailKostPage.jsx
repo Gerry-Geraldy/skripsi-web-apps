@@ -71,7 +71,7 @@ const DetailKostPage = () => {
                   key={index}
                   src={img}
                   alt={`img-${index}`}
-                  className="w-full h-28 lg:h-36 object-cover rounded-sm"
+                  className="w-28 h-28 lg:h-36 lg:w-36 object-cover rounded-sm"
                 />
               ))}
             </div>

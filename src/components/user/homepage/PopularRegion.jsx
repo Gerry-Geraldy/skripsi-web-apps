@@ -32,7 +32,7 @@ const PopularRegion = () => {
           {regionsContent.map((region, index) => (
             <button
               key={index}
-              className="focus:bg-blue-gray-900 rounded-full px-8 py-4 w-[120px] font-mulishBold text-center dark:text-white text-headingBlack outline dark:outline-white dark:bg-gray-800 outline-black outline-1"
+              className="focus:bg-blue-gray-900 focus:text-white rounded-full px-8 py-4 w-[120px] font-mulishBold text-center dark:text-white text-headingBlack outline dark:outline-white dark:bg-gray-800 outline-black outline-1"
               onClick={() => handleRegionSelect(region)}
             >
               {region.name}

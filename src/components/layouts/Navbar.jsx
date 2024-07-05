@@ -115,7 +115,7 @@ const Navbar = () => {
                     key={index}
                     as="li"
                     variant="small"
-                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${currentHoverBgColor} ${
+                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg   ${currentHoverBgColor} ${
                       (isHomePage || isAboutPage) && !isMobile
                         ? 'text-white'
                         : isScrolled

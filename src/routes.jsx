@@ -2,7 +2,7 @@ import {
   Homepage,
   AboutUs,
   PopularKost,
-  Help,
+  // Help,
   DetailKostPage,
 } from "./pages/user";
 
@@ -28,11 +28,11 @@ const routes = [
         path: "/user/popular",
         element: <PopularKost />,
       },
-      {
-        name: "Help",
-        path: "/user/help",
-        element: <Help />,
-      },
+      // {
+      //   name: "Help",
+      //   path: "/user/help",
+      //   element: <Help />,
+      // },
       {
         name: "Detail",
         path: "/user/kost/:id",
