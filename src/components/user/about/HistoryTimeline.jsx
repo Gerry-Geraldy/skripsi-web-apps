@@ -29,11 +29,11 @@ const HistoryTimeline = () => {
                   </div>
                   <Typography
                     variant="h6"
-                    className="mb-2 text-blue-700 font-semibold"
+                    className="mb-2 text-blue-700 font-semibold font-mulishExtraBold"
                   >
                     {event.year}
                   </Typography>
-                  <Typography className="text-gray-700 dark:text-white">
+                  <Typography className="text-gray-700 dark:text-white font-mulishSemiBold">
                     {event.description}
                   </Typography>
                 </div>

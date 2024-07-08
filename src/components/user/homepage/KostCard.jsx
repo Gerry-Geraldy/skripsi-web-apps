@@ -47,16 +47,16 @@ const KostCard = ({ kosts }) => {
   };
 
   return (
-    <section className="overflow-x-auto flex w-full">
-      <div className="flex flex-row gap-3 justify-center items-center mx-auto">
+    <section className="overflow-x-auto flex w-full p-10 items-center">
+      <div className="flex flex-row gap-3 justify-center items-center mx-auto ">
         {kosts.map((kost, index) => (
           <Link
             to={`/user/kost/${kost.id}`}
             key={index}
-            className="w-64 rounded-none flex-shrink-0"
+            className="w-64 rounded-none flex-shrink-0 transition-transform duration-300 hover:-translate-y-1"
           >
             <Card
-              className="w-full flex-shrink-0 dark:bg-gray-800"
+              className="w-full flex-shrink-0 dark:bg-gray-800 "
               ref={(el) => (cardRefs.current[index] = el)}
             >
               <CardHeader
@@ -66,7 +66,7 @@ const KostCard = ({ kosts }) => {
                 <img
                   src={kost.image}
                   alt="card-image"
-                  className=" h-48 object-cover bg-cover rounded-none w-full"
+                  className=" h-48 object-cover bg-cover rounded-none w-full "
                 />
               </CardHeader>
               <CardBody>

@@ -16,7 +16,7 @@ const CardFilter = ({ kost }) => {
   const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
     controller;
 
-  const { currentIconColor} = useThemeSwitcherConfig(
+  const { currentIconColor } = useThemeSwitcherConfig(
     themeColor,
     tritanopiaColor,
     protanopiaColor,
@@ -40,18 +40,20 @@ const CardFilter = ({ kost }) => {
 
   return (
     <Link to={`/user/kost/${kost.id}`}>
-      <div className="border dark:border-none gap-2 rounded-sm flex flex-col lg:flex-row w-full items-start md:items-center bg-white dark:bg-gray-800 shadow-sm shadow-gray-200 dark:shadow-none hover:scale-100">
-        <img
-          src={kost.image}
-          alt={kost.name}
-          className="w-full md:w-48 h-60 md:h-32 object-cover mb-4 md:mb-0 mr-0 md:mr-4"
-        />
+      <div className="border dark:border-none gap-2 rounded-sm flex flex-col lg:flex-row w-full items-start md:items-center bg-white dark:bg-gray-800 shadow-sm shadow-gray-200 dark:shadow-none hover:scale-105 transform transition-transform duration-100">
+        <div className="w-full lg:w-[30%] ">
+          <img
+            src={kost.image}
+            alt={kost.name}
+            className="w-full h-60 md:h-36 mb-4 md:mb-0 mr-0 md:mr-4 object-cover transition-opacity duration-100 hover:opacity-80"
+          />
+        </div>
         <div className="flex justify-between items-center w-full p-4">
           <div className="flex flex-col gap-1">
             <div className="flex flex-row item-center gap-2 ">
               <p className="self-center">{renderStars(kost.rating)}</p>
               <span className="text-[14px] dark:text-white">|</span>
-              <p className="text-[14px] text-gray-500 dark:text-white">
+              <p className="text-[12px] sm:text-[14px] text-gray-500 dark:text-white">
                 ( {kost.review} reviews )
               </p>
             </div>
@@ -89,6 +91,7 @@ const CardFilter = ({ kost }) => {
             <p className="text-md text-gray-600 font-normal">{kost.day}</p>
           </div>
         </div>
+        <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500 hover:opacity-50"></div>
       </div>
     </Link>
   );

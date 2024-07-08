@@ -30,7 +30,7 @@ const Testimonials = () => {
               <Typography className="font-semibold text-primary">
                 {testimonial.name}
               </Typography>
-              <Typography className="text-gray-700 mt-2 dark:text-white">
+              <Typography className="text-gray-700 mt-2 dark:text-white font-mulishSemiBold">
                 {testimonial.comment}
               </Typography>
             </div>

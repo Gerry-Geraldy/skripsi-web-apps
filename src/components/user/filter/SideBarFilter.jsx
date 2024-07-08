@@ -52,7 +52,7 @@ const SideBarFilter = ({ filters, setFilters, includesOptions }) => {
               checked={selectedIncludes.includes(include.name)}
               className="mr-2 leading-tight "
             />
-            <span className="text-gray-700 dark:text-white">{include.name}</span>
+            <span className="text-gray-700 dark:text-white text-[12px] sm:text-[14px]">{include.name}</span>
           </label>
         ))}
       </div>

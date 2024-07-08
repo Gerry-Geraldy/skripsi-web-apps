@@ -22,7 +22,7 @@ const TeamMembers = () => {
                 className="w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] rounded-full mx-auto mb-4 object-cover"
               />
               <Typography variant="h6" className="dark:text-white text-headingBlack">{member.name}</Typography>
-              <Typography className="text-gray-600 dark:text-white">
+              <Typography className="text-gray-600 dark:text-white font-mulishSemiBold text-[12px] md:text-[14px]">
                 {member.position}
               </Typography>
             </div>
