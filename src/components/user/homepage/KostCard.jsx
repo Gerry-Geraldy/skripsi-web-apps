@@ -16,11 +16,13 @@ import {
 import { Link } from "react-router-dom";
 import { useMaterialTailwindController } from "../../../context";
 import useThemeSwitcherConfig from "../../../utils/themeSwitcherConfig";
+import useAnimateCard from "../../../utils/hooks/useAnimateCard";
 
 const KostCard = ({ kosts }) => {
   const [controller] = useMaterialTailwindController();
   const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
     controller;
+  const cardRefs = useAnimateCard();
 
   const { currentIconColor } = useThemeSwitcherConfig(
     themeColor,
@@ -35,7 +37,7 @@ const KostCard = ({ kosts }) => {
         <FontAwesomeIcon
           key={i}
           icon={faStar}
-          className={`w-4 h-4 md:w-5 md:h-5 ${
+          className={`w-3 h-3 md:w-4 md:h-4 ${
             i <= rating ? "text-primary" : "text-gray-400"
           }`}
         />
@@ -46,14 +48,17 @@ const KostCard = ({ kosts }) => {
 
   return (
     <section className="overflow-x-auto flex w-full">
-      <div className="flex flex-row gap-5 justify-center items-center mx-auto">
+      <div className="flex flex-row gap-3 justify-center items-center mx-auto">
         {kosts.map((kost, index) => (
           <Link
             to={`/user/kost/${kost.id}`}
             key={index}
-            className="w-80 rounded-none flex-shrink-0"
+            className="w-64 rounded-none flex-shrink-0"
           >
-            <Card className="w-full flex-shrink-0 dark:bg-gray-800">
+            <Card
+              className="w-full flex-shrink-0 dark:bg-gray-800"
+              ref={(el) => (cardRefs.current[index] = el)}
+            >
               <CardHeader
                 color="blue-gray"
                 className="relative rounded-none w-full mx-auto"
@@ -61,7 +66,7 @@ const KostCard = ({ kosts }) => {
                 <img
                   src={kost.image}
                   alt="card-image"
-                  className="h-56 object-cover rounded-none w-full"
+                  className=" h-48 object-cover bg-cover rounded-none w-full"
                 />
               </CardHeader>
               <CardBody>
@@ -76,36 +81,38 @@ const KostCard = ({ kosts }) => {
                   <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faBed}
-                      className={`h-3 w-3 sm:w-4 sm:h-4 md:w-6 md:h-6 ${currentIconColor}`}
+                      className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.bed}
                   </Typography>
                   <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faCar}
-                      className={`h-3 w-3 sm:w-4 sm:h-4 md:w-6 md:h-6 ${currentIconColor}`}
+                      className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.parking ? "Parking Lot Available" : "No Parking Lot"}
                   </Typography>
                   <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faUserGroup}
-                      className={`h-3 w-3 sm:w-4 sm:h-4 md:w-6 md:h-6 ${currentIconColor}`}
+                      className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.size}
                   </Typography>
                 </div>
               </CardBody>
               <CardFooter className="border-t-gray-200 dark:border-gray-900 flex flex-row justify-between items-center border border-t-1 dark:text-white">
-                <div className="flex flex-col gap-3 mt-2 lg:mt-1">
+                <div className="flex flex-col gap-3">
                   <div className="flex ">{renderStars(kost.rating)}</div>
-                  <p>{kost.review} review</p>
+                  <p className="text-[12px] sm:text-[14px]">
+                    {kost.review} review
+                  </p>
                 </div>
                 <div className="flex flex-col gap-1">
                   <h5 className="text-[15px] sm:text-[16px] font-volkhovBold text-priceColor dark:text-white">
                     Rp.{kost.price}
                   </h5>
-                  <p>{kost.day}</p>
+                  <p className="text-[12px] sm:text-[14px]">{kost.day}</p>
                 </div>
               </CardFooter>
             </Card>

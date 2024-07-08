@@ -32,26 +32,13 @@ const BannerKost = () => {
   useEffect(() => {
     const fetchData = async () => {
     
-      const data = kosts.find((kost) => kost.name === "Kost Ibu Made"); 
+      const data = kosts.find((kost) => kost.name === "Kost Tukad Pancoran"); 
       setKostData(data);
     };
 
     fetchData();
   }, []);
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <FontAwesomeIcon
-          key={i}
-          icon={faStar}
-          className={`h-4 w-4 ${i <= rating ? "text-primary" : "text-gray-400"}`}
-        />
-      );
-    }
-    return stars;
-  };
 
   if (!kostData) {
     return <div>Loading...</div>; // Optionally, add a loading state
@@ -59,13 +46,13 @@ const BannerKost = () => {
 
   return (
     <section className="relative mt-24 shadow-sm dark:shadow-none h-[450px] w-full">
-      <div className="relative h-[720px] lg:h-full w-full">
+      <div className="relative h-[820px] lg:h-full w-full">
         <img
           src={banner1}
           alt="banner kost"
           className="h-full w-full object-cover bg-center blur-sm"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col lg:flex-row items-center justify-center p-8 h-full">
+        <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col lg:flex-row items-center justify-center p-6 h-full">
           <div className="p-3">
             <img
               src={kostData.image}
@@ -74,25 +61,25 @@ const BannerKost = () => {
             />
           </div>
           <div className="ml-8 mt-4 text-white flex flex-col gap-3">
-            <div className="bg-blue-200 text-white p-2 rounded-full text-sm inline-block w-[40%] lg:w-[30%] text-center">
+            <div className="bg-blue-200 text-white p-2 rounded-full text-sm inline-block w-[50%] lg:w-[30%] text-center">
               <p className="font-bold text-headingBlack font-mulishExtraBold">TRENDING NOW</p>
             </div>
             <h2 className="text-4xl font-volkhovBold text-white">{kostData.name}</h2>
-            <div className="flex items-center gap-2">
-              <div className="flex items-center">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-                <span className="mr-2 font-mulishSemiBold">{kostData.region}</span>
+            <div className="flex flex-row items-start gap-2 ">
+              <div className="flex">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 w-6 h-6" />
+                <span className="mr-2 font-mulishSemiBold text-[12px] sm:text-[14px]">{kostData.region}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <p className="self-center">{renderStars(kostData.rating)}</p>
-                <span className="font-mulishSemiBold">({kostData.review} reviews)</span>
+              <div className="flex items-start">
+                <FontAwesomeIcon icon={faStar} className="w-4 sm:w-5 h-4 sm:h-5 text-primary"/>
+                <span className="font-mulishSemiBold text-[12px] sm:text-[14px]">({kostData.review} reviews)</span>
               </div>
             </div>
-            <p className="mt-2 max-w-lg text-justify lg:text-left font-mulishSemiBold">
+            <p className="mt-2 max-w-lg text-justify lg:text-left font-mulishSemiBold text-[12px] sm:text-[14px]">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
             </p>
-            <div className="flex flex-row justify-start items-center gap-10">
-              <button className={`${currentButtonColor} mt-4  px-8 py-3 rounded-full shadow-md hover:shadow-md  text-center font-semibold text-white`}>
+            <div className="flex flex-row justify-start items-center gap-6">
+              <button className={`${currentButtonColor} mt-4  px-8 py-3 rounded-full shadow-md hover:shadow-md  text-center text-[12px] sm:text-[14px] font-semibold text-white `}>
                 Book Now
               </button>
               <div className="mt-4 flex space-x-2">

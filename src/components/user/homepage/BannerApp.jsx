@@ -18,7 +18,7 @@ const BannerApp = () => {
     deuteranopiaColor
   );
   return (
-    <section className="relative mt-14 h-[500px] flex items-center justify-center bg-gray-200">
+    <section className="relative mt-14 h-[600px] p-4 flex items-center justify-center bg-gray-200">
       <img
         src={region1}
         alt="Mobile App Banner"
@@ -42,18 +42,18 @@ const BannerApp = () => {
           <h2 className="text-4xl font-bold mb-4 text-center lg:text-left">
             Jasa Tukang Mobile App
           </h2>
-          <p className="max-w-md mb-8 text-center lg:text-left">
+          <p className="max-w-md mb-8 text-center lg:text-left text-[12px] sm:text-[14px]">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </p>
           <div className="flex space-x-4 mx-auto lg:mx-0">
-            <Button className={`${currentButtonColor} text-white px-6 py-4 rounded-full shadow-md flex flex-row gap-2 items-center`}>
-              <FontAwesomeIcon icon={faApple} className="w-7 h-7 " />
+            <Button className={`${currentButtonColor} text-white text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center bg`}>
+              <FontAwesomeIcon icon={faApple} className="w-5 h-5 smw-6 sm:h-6 " />
               Download for iOS
             </Button>
-            <Button className={`${currentButtonColor} text-white px-6 py-4 rounded-full shadow-md flex flex-row gap-2 items-center`}>
-              <FontAwesomeIcon icon={faMobile} className="w-7 h-7" />
+            <Button className={`${currentButtonColor} text-white text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center`}>
+              <FontAwesomeIcon icon={faMobile} className="w-5 h-5 smw-6 sm:h-6" />
               Download for Android
             </Button>
           </div>
