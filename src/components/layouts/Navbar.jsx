@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <section
-      className={`mx-auto max-w-screen p-5 relative z-10 tw-full navbar ${
+      className={`mx-auto max-w-screen p-5 relative z-50 tw-full navbar ${
         isMobile ? (sidenavType === 'dark' ? 'bg-gray-800' : 'bg-white') : ''
       } ${isScrolled ? (sidenavType === 'dark' ? 'bg-gray-800 shadow-gray-700' : 'bg-white shadow-gray-600') : ''}`}
       style={{

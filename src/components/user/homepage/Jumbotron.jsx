@@ -18,7 +18,7 @@ const Jumbotron = () => {
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center ">
               <AnimatedText>
-                <div className="w-3/4 text-center flex flex-col  md:w-full ">
+                <div className="w-3/4 text-center flex flex-col  md:w-full items-center mx-auto mt-5">
                   <Typography
                     variant="h1"
                     color="white"

@@ -23,7 +23,7 @@ const PopularKost = () => {
           </Button>
         </div>
       </AnimatedText>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {kosts.map((kost, index) => (
           <Link
             to={`/user/kost/${kost.id}`}
@@ -36,9 +36,9 @@ const PopularKost = () => {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-70"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-white p-4">
-              <h3 className="text-xl font-bold">{kost.name}</h3>
-              <p className="text-sm">{kost.region}</p>
-              <p className="text-sm">
+              <h3 className=" text-[13px] lg:text-xl font-bold">{kost.name}</h3>
+              <p className="text-[10px] lg:text-sm">{kost.region}</p>
+              <p className="text-[10px] lg:text-sm">
                 {kost.price} {kost.day}
               </p>
             </div>
