@@ -30,12 +30,12 @@ const BookingSidebar = ({ price }) => {
       </div>
       <button
         onClick={handleBooking}
-        className={`w-full text-white p-2 rounded-md font-semibold ${currentButtonColor} ${currentHoverBgColor}`}
+        className={`w-full text-white p-2 rounded-md font-semibold  text-[12px] sm:text-[14px] ${currentButtonColor} ${currentHoverBgColor}`}
       >
         Ajukan Sewa
       </button>
       <div className="flex flex-col gap-2 mt-4">
-        <button className="w-full border p-2 rounded-md text-gray-700 flex items-center justify-center gap-2 hover:bg-gray-100">
+        <button className="w-full border p-2 rounded-md text-gray-700 flex items-center justify-center gap-2 hover:bg-gray-100 text-[12px] sm:text-[14px]">
           <span>Tanya Pemilik</span>
         </button>
       </div>

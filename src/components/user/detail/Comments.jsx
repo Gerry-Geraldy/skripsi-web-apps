@@ -18,7 +18,7 @@ const Comments = () => {
               <FontAwesomeIcon
                 key={i}
                 icon={faStar}
-                className={`h-9 w-9 ${i < 4 ? "text-primary" : "text-gray-300"}`}
+                className={`h-8 w-8 sm:h-9 sm:w-9 ${i < 4 ? "text-primary" : "text-gray-300"}`}
               />
             ))}
         </div>
@@ -39,7 +39,7 @@ const Comments = () => {
                   className="ml-2 text-blue-500"
                 />
               </div>
-              <p className="text-gray-600 dark:text-white text-sm">{comment.date}</p>
+              <p className="text-gray-600 dark:text-white text-sm text-[12px] sm:text-[14px]">{comment.date}</p>
               <div className="flex items-center mt-1">
                 {Array(5)
                   .fill(0)
@@ -47,11 +47,11 @@ const Comments = () => {
                     <FontAwesomeIcon
                       key={i}
                       icon={faStar}
-                      className={`h-4 w-4 ${i < comment.rating ? "text-primary" : "text-gray-300"}`}
+                      className={`w-4 sm:w-5 h-4 sm:h-5 ${i < comment.rating ? "text-primary" : "text-gray-300"}`}
                     />
                   ))}
               </div>
-              <p className="mt-2 text-gray-700 dark:text-gray-300">{comment.comment}</p>
+              <p className="mt-2 text-gray-700 dark:text-gray-300 text-[12px] sm:text-[14px]">{comment.comment}</p>
               <div className="mt-2 flex items-center text-sm">
                 <span className="text-gray-500 mr-2 dark:text-gray-300">Helpful?</span>
                 <button className="text-green-500 font-semibold">Yes</button>

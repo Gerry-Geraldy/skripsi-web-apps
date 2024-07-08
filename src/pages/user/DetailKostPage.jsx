@@ -33,7 +33,7 @@ const DetailKostPage = () => {
         <FontAwesomeIcon
           key={i}
           icon={faStar}
-          className={`h-3 w-3 sm:w-4 sm:h-4 md:w-6 md:h-6 ${
+          className={`w-4 sm:w-5 h-4 sm:h-5 ${
             i <= rating ? "text-primary" : "text-gray-400"
           }`}
         />
@@ -49,14 +49,14 @@ const DetailKostPage = () => {
           <h1 className="text-5xl font-bold font-volkhovBold text-headingBlack dark:text-white">
             {kost.name}
           </h1>
-          <div className="flex flex-row gap-2 mt-[20px] lg:mt-[50px]">
-            <p className="flex gap-2 items-center text-gray-600 dark:text-white">
+          <div className="flex flex-row gap-1 sm:gap-2 mt-[20px] lg:mt-[50px]">
+            <p className="flex gap-2 items-center text-gray-600 dark:text-white text-[12px] sm:text-[14px]">
               <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
               {kost.region} <span className="text-2xl"> | </span>
             </p>
             <p className="flex items-center gap-1 text-gray-600">
               <div className="flex ">{renderStars(kost.rating)}</div>
-              <p className="dark:text-white">( {kost.review} reviews )</p>
+              <p className="dark:text-white text-[12px] sm:text-[14px]">( {kost.review} reviews )</p>
             </p>
           </div>
           <div className="mt-[20px] lg:mt-[30px]">
@@ -85,11 +85,11 @@ const DetailKostPage = () => {
                 {kost.roomSpecifications.map((spec, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-2 dark:text-gray-300"
+                    className="flex items-center gap-2 dark:text-gray-300 text-[12px] sm:text-[14px]"
                   >
                     <FontAwesomeIcon
                       icon={spec.icon}
-                      className={`w-5 h-5 ${currentIconColor}`}
+                      className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                     />
                     {spec.name}
                   </li>
@@ -108,9 +108,9 @@ const DetailKostPage = () => {
                   >
                     <FontAwesomeIcon
                       icon={include.icon}
-                      className={`w-5 h-5 ${currentIconColor}`}
+                      className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                     />
-                    <span className="dark:text-gray-300">{include.name}</span>
+                    <span className="dark:text-gray-300 text-[12px] sm:text-[14px]">{include.name}</span>
                   </div>
                 ))}
               </div>
@@ -127,9 +127,9 @@ const DetailKostPage = () => {
                   >
                     <FontAwesomeIcon
                       icon={item.icon}
-                      className={`w-5 h-5 ${currentIconColor}`}
+                      className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                     />
-                    <span className="dark:text-gray-300">{item.name}</span>
+                    <span className="dark:text-gray-300 text-[12px] sm:text-[14px]">{item.name}</span>
                   </div>
                 ))}
               </div>
@@ -141,9 +141,9 @@ const DetailKostPage = () => {
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon
                   icon={kost.meetingPoint.icon}
-                  className={`w-5 h-5 ${currentIconColor}`}
+                  className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                 />
-                <span className="dark:text-gray-300">
+                <span className="dark:text-gray-300 text-[12px] sm:text-[14px]">
                   {kost.meetingPoint.name}
                 </span>
               </div>
@@ -159,11 +159,11 @@ const DetailKostPage = () => {
                     {kost.additionalInfo.houseRules.map((rule, index) => (
                       <li
                         key={index}
-                        className="flex items-center gap-2 mt-2 dark:text-gray-300"
+                        className="flex items-center gap-2 mt-2 dark:text-gray-300 text-[12px] sm:text-[14px]"
                       >
                         <FontAwesomeIcon
                           icon={rule.icon}
-                          className={`w-5 h-5 ${currentIconColor}`}
+                          className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                         />
                         {rule.name}
                       </li>
@@ -176,11 +176,11 @@ const DetailKostPage = () => {
                     {kost.additionalInfo.nearbyPlaces.map((place, index) => (
                       <li
                         key={index}
-                        className="flex items-center gap-2 mt-2 dark:text-gray-300"
+                        className="flex items-center gap-2 mt-2 dark:text-gray-300 text-[12px] sm:text-[14px]"
                       >
                         <FontAwesomeIcon
                           icon={place.icon}
-                          className={`w-5 h-5 ${currentIconColor}`}
+                          className={`w-4 sm:w-5 h-4 sm:h-5 ${currentIconColor}`}
                         />
                         {place.name}
                       </li>
@@ -191,7 +191,7 @@ const DetailKostPage = () => {
                   <Typography variant="paragraph" className="text">
                     <a
                       href="#"
-                      className="text-green-500 underline text-[12px]"
+                      className="text-green-500 underline text-[12px] sm:text-[14px]"
                     >
                       Open in Google Maps
                     </a>

@@ -29,7 +29,7 @@ const Homepage = () => {
         <AnimatedText>
           <Typography
             variant="small"
-            className="font-medium mx-auto text-center w-full max-w-[250px] md:max-w-[650px] text-gray-500 font-mulishSemiBold text-[16px]"
+            className="font-medium mx-auto text-center w-full max-w-[250px] md:max-w-[650px] text-gray-500 font-mulishSemiBold text-[12px] sm:text-[14px]"
           >
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit
