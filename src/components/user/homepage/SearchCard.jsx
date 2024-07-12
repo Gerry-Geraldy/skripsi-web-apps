@@ -20,7 +20,7 @@ const SearchCard = () => {
   return (
     <AnimatedText>
       <div
-        className={`relative lg:flex justify-center bottom-11 w-[70%] mx-auto rounded-2xl px-5 py-5 items-center shadow-lg hidden bg-white dark:bg-gray-800`}
+        className={`lg:flex justify-center  w-[70%] mx-auto rounded-2xl px-5 py-5 items-center shadow-lg hidden bg-white dark:bg-gray-800`}
       >
         <div className="flex flex-row items-center gap-[60px]">
           {cardItems.map((item, index) => (

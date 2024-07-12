@@ -11,7 +11,6 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { useMaterialTailwindController } from "../../../context";
@@ -30,6 +29,7 @@ const KostCard = ({ kosts }) => {
     protanopiaColor,
     deuteranopiaColor
   );
+
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -65,53 +65,47 @@ const KostCard = ({ kosts }) => {
               >
                 <img
                   src={kost.image}
-                  alt="card-image"
+                  alt={kost.name}
                   className=" h-48 object-cover bg-cover rounded-none w-full "
                 />
               </CardHeader>
               <CardBody>
-                <Typography
-                  variant="h5"
-                  color="blue-gray"
-                  className="mb-2 dark:text-white"
-                >
-                  {kost.name}
-                </Typography>
+                <h2 className="text-xl mb-2 dark:text-white">{kost.name}</h2>
                 <div className="flex flex-col gap-2">
-                  <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
+                  <div className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faBed}
                       className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.bed}
-                  </Typography>
-                  <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
+                  </div>
+                  <div className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faCar}
                       className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.parking ? "Parking Lot Available" : "No Parking Lot"}
-                  </Typography>
-                  <Typography className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
+                  </div>
+                  <div className="flex items-center gap-3 font-semibold text-[11px] dark:text-gray-300">
                     <FontAwesomeIcon
                       icon={faUserGroup}
                       className={`h-3 w-3 sm:w-5 sm:h-5 ${currentIconColor}`}
                     />
                     {kost.size}
-                  </Typography>
+                  </div>
                 </div>
               </CardBody>
               <CardFooter className="border-t-gray-200 dark:border-gray-900 flex flex-row justify-between items-center border border-t-1 dark:text-white">
                 <div className="flex flex-col gap-3">
-                  <div className="flex ">{renderStars(kost.rating)}</div>
+                  <div className="flex">{renderStars(kost.rating)}</div>
                   <p className="text-[12px] sm:text-[14px]">
                     {kost.review} review
                   </p>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <h5 className="text-[15px] sm:text-[16px] font-volkhovBold text-priceColor dark:text-white">
+                  <h3 className="text-[15px] sm:text-[16px] font-bold text-green-900 dark:text-white">
                     Rp.{kost.price}
-                  </h5>
+                  </h3>
                   <p className="text-[12px] sm:text-[14px]">{kost.day}</p>
                 </div>
               </CardFooter>
@@ -126,7 +120,7 @@ const KostCard = ({ kosts }) => {
 KostCard.propTypes = {
   kosts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired, // Tambahkan id sebagai properti wajib
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       bed: PropTypes.string.isRequired,
       parking: PropTypes.bool.isRequired,

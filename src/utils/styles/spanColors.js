@@ -22,8 +22,8 @@ export const deuteranopiaColors = {
 };
 
 export const tritanopiaColors = {
-  red: "bg-red-500",
-  green: "bg-green-500",
+  red: "bg-trinatopiaRedBg",
+  green: "bg-trinatopiaGreenBg",
   black: "bg-black",
   white: "bg-white",
 };

@@ -80,6 +80,7 @@ const Navbar = () => {
               className="h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
               ripple={false}
               onClick={toggleNav}
+              aria-label={openNav ? "Tutup Navigasi" : "Buka Navigasi"}
             >
               {openNav ? (
                 <XMarkIcon
@@ -115,11 +116,11 @@ const Navbar = () => {
                     key={index}
                     as="li"
                     variant="small"
-                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg   ${currentHoverBgColor} ${
+                    className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${currentHoverBgColor} ${
                       (isHomePage || isAboutPage) && !isMobile
                         ? 'text-white'
                         : isScrolled
-                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
+                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white ')
                         : ''
                     }`}
                   >

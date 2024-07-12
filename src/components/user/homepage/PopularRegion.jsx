@@ -68,7 +68,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-500 font-mulishBold dark:bg-gray-900 text-[10px]"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-purple-900 font-mulishBold dark:bg-gray-900 text-xs py-1 px-2 rounded-lg"
                       >
                         <FontAwesomeIcon
                           icon={faBus}
@@ -87,7 +87,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-green-500 dark:bg-gray-900 text-[10px]"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-green-900 dark:bg-gray-900 text-xs py-1 px-2 rounded-lg"
                       >
                         <FontAwesomeIcon
                           icon={faEarth}
@@ -104,7 +104,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-orange-500 dark:bg-gray-900 text-[10px]"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-red-900 dark:bg-gray-900 text-xs py-1 px-2 rounded-lg"
                       >
                         <FontAwesomeIcon
                           icon={faTaxi}
@@ -123,13 +123,13 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-red-500 dark:bg-gray-900 text-[10px]"
+                        className="dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-red-900 dark:bg-gray-900 text-xs py-1 px-2 rounded-lg"
                       >
                         <FontAwesomeIcon
                           icon={faBriefcase}
                           className="w-4 h-4 sm:w-5 sm:h-5"
                         />
-                        Bussines Tours
+                        Business Tours
                       </Button>
                     </PopoverHandler>
                     <PopoverContent>
@@ -140,7 +140,7 @@ const PopularRegion = () => {
                     <PopoverHandler>
                       <Button
                         variant="text"
-                        className=" dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-blue-500 dark:bg-gray-900 text-[10px]"
+                        className=" dark:shadow-none shadow-blue-gray-200 shadow-sm flex items-center gap-3 text-blue-900 dark:bg-gray-900 text-xs py-1 px-2 rounded-lg"
                       >
                         <FontAwesomeIcon
                           icon={faMapLocationDot}

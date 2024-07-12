@@ -32,7 +32,7 @@ const PopularKost = () => {
           >
             <img
               src={kost.image}
-              alt={kost.alt}
+              alt={kost.name}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-70"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-white p-4">

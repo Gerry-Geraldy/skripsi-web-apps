@@ -29,7 +29,11 @@ export function Configurator() {
     >
       <div className="flex items-start justify-between pb-4">
         <div>
-          <Typography variant="h5" color="blue-gray" className="dark:text-white">
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="dark:text-white"
+          >
             Configurator
           </Typography>
           <Typography className="font-normal text-blue-gray-600 dark:text-gray-300">
@@ -40,13 +44,18 @@ export function Configurator() {
           variant="text"
           color="blue-gray"
           onClick={() => setOpenConfigurator(dispatch, false)}
+          aria-label="Button Close Configurator"
         >
           <XMarkIcon strokeWidth={2.5} className="h-5 w-5" />
         </IconButton>
       </div>
       <div className="py-4">
         <div className="mb-8">
-          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
+          <Typography
+            variant="h6"
+            color="blue-gray"
+            className="mb-3 dark:text-gray-300"
+          >
             Theme Colors
           </Typography>
           <div className="flex items-center gap-2">
@@ -59,17 +68,24 @@ export function Configurator() {
                   themeColor === color ? "border-black" : "border-transparent"
                 }`}
                 onClick={() => setThemeColor(dispatch, color)}
-                aria-label={`Setel warna sidenav ke ${color}`}
               />
             ))}
           </div>
         </div>
 
         <div className="mb-8">
-          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
+          <Typography
+            variant="h6"
+            color="blue-gray"
+            className="mb-3 dark:text-gray-300"
+          >
             Theme Types
           </Typography>
-          <Typography variant="small" color="gray" className="mb-3 dark:text-gray-300">
+          <Typography
+            variant="small"
+            color="gray"
+            className="mb-3 dark:text-gray-300"
+          >
             Choose between 3 different theme types.
           </Typography>
           <div className="flex items-center gap-2">
@@ -91,11 +107,19 @@ export function Configurator() {
         </div>
 
         <div>
-          <Typography variant="h6" color="blue-gray" className="mb-3 dark:text-gray-300">
+          <Typography
+            variant="h6"
+            color="blue-gray"
+            className="mb-3 dark:text-gray-300"
+          >
             Theme For Color Blindness
           </Typography>
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="mb-2 dark:text-gray-300"
+            >
               Tritanopia
             </Typography>
             <div className="flex items-center gap-2">
@@ -109,7 +133,11 @@ export function Configurator() {
             </div>
           </div>
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="mb-2 dark:text-gray-300"
+            >
               Protanopia
             </Typography>
             <div className="flex items-center gap-2">
@@ -124,7 +152,11 @@ export function Configurator() {
           </div>
 
           <div className="mb-6">
-            <Typography variant="h6" color="blue-gray" className="mb-2 dark:text-gray-300">
+            <Typography
+              variant="h6"
+              color="blue-gray"
+              className="mb-2 dark:text-gray-300"
+            >
               Deuteranopia
             </Typography>
             <div className="flex items-center gap-2">

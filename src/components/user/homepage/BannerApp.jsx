@@ -48,11 +48,11 @@ const BannerApp = () => {
             veniam consequat sunt nostrud amet.
           </p>
           <div className="flex space-x-4 mx-auto lg:mx-0">
-            <Button className={`${currentButtonColor} text-white text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center bg`}>
+            <Button className={`${currentButtonColor}  text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center bg`}>
               <FontAwesomeIcon icon={faApple} className="w-5 h-5 smw-6 sm:h-6 " />
               Download for iOS
             </Button>
-            <Button className={`${currentButtonColor} text-white text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center`}>
+            <Button className={`${currentButtonColor}  text-[10px] sm:text-[12px] px-4 py-2  sm:px-6 sm:py-4 rounded-full shadow-md flex flex-row gap-1 items-center`}>
               <FontAwesomeIcon icon={faMobile} className="w-5 h-5 smw-6 sm:h-6" />
               Download for Android
             </Button>

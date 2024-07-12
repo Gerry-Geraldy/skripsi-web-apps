@@ -6,6 +6,7 @@ import {
   BannerApp,
   PopularKost,
   NewsCard,
+  SearchCard,
 } from "../../components/user/homepage";
 import {
   KostByRegion,
@@ -17,6 +18,9 @@ const Homepage = () => {
   return (
     <section className="grid-cols-2 h-full">
       <Jumbotron />
+      <div className="relative w-full bottom-10">
+        <SearchCard />
+      </div>
       <div className="w-full mb-10">
         <AnimatedText>
           <Typography

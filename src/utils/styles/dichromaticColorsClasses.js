@@ -7,27 +7,27 @@ export const dichromaticColors = [
       {
         name: "Red",
         classNames: {
-          button: "bg-red-500",
-          icon: "text-red-500",
-          hoverBg: "hover:bg-red-600",
-          hoverText: "hover:text-red-600",
+          button: "bg-trinatopiaRedBg text-trinatopiaRedTxt",
+          icon: "text-trinatopiaRedTxt",
+          hoverBg: "hover:bg-trinatopiaRedBg",
+          hoverText: "hover:text-trinatopiaRedTxt",
         },
       },
       {
         name: "Green",
         classNames: {
-          button: "bg-green-500",
-          icon: "text-green-500",
-          hoverBg: "hover:bg-green-600",
-          hoverText: "hover:text-green-600",
+          button: "bg-trinatopiaGreenBg text-trinatopiaGreenTxt",
+          icon: "text-trinatopiaGreenTxt",
+          hoverBg: "hover:bg-trinatopiaGreenBg hover:text-trinatopiaGreenTxt",
+          hoverText: "hover:text-trinatopiaGreenTxt",
         },
       },
       {
         name: "Black",
         classNames: {
-          button: "bg-black",
+          button: "bg-trinatopiaBlackBg text-black",
           icon: "text-black",
-          hoverBg: "hover:bg-gray-800",
+          hoverBg: "hover:bg-trinatopiaBlackBg",
           hoverText: "hover:text-gray-800",
         },
       },

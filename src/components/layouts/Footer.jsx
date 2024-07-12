@@ -1,3 +1,10 @@
+import {
+  faFacebookF,
+  faInstagram,
+  faPinterest,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const Footer = () => {
@@ -9,35 +16,41 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col items-center text-center md:flex-row justify-between md:text-left md:items-start">
         <div className="flex-col gap-5">
           <div className="flex flex-col mb-6 md:mb-0">
-            <label className="mb-2">Language</label>
+            <label htmlFor="language" className="mb-2">
+              Language
+            </label>
             <select
+              id="language"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
               className="bg-blue-gray-800 text-white p-2 rounded"
             >
-              <option>English (UK)</option>
-              <option>English (US)</option>
-              <option>Spanish</option>
-              <option>French</option>
+              <option value="english-uk">English (UK)</option>
+              <option value="english-us">English (US)</option>
+              <option value="spanish">Spanish</option>
+              <option value="french">French</option>
             </select>
           </div>
           <div className="flex flex-col mb-6 md:mb-0">
-            <label className="mb-2">Currency</label>
+            <label htmlFor="currency" className="mb-2">
+              Currency
+            </label>
             <select
+              id="currency"
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
               className="bg-blue-gray-800 text-white p-2 rounded"
             >
-              <option>U.S. Dollar ($)</option>
-              <option>Euro (€)</option>
-              <option>British Pound (£)</option>
-              <option>Japanese Yen (¥)</option>
+              <option value="usd">U.S. Dollar ($)</option>
+              <option value="eur">Euro (€)</option>
+              <option value="gbp">British Pound (£)</option>
+              <option value="jpy">Japanese Yen (¥)</option>
             </select>
           </div>
         </div>
 
         <div className="mb-6 md:mb-0 md:mr-10">
-          <h5 className="font-bold mb-3">Company</h5>
+          <h1 className="font-bold mb-3">Company</h1>
           <ul>
             <li className="mb-2 hover:underline cursor-pointer">About Us</li>
             <li className="mb-2 hover:underline cursor-pointer">Blog</li>
@@ -46,7 +59,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="mb-6 md:mb-0 md:mr-10">
-          <h5 className="font-bold mb-3">Help</h5>
+          <h1 className="font-bold mb-3">Help</h1>
           <ul>
             <li className="mb-2 hover:underline cursor-pointer">Contact us</li>
             <li className="mb-2 hover:underline cursor-pointer">FAQs</li>
@@ -61,11 +74,11 @@ const Footer = () => {
         </div>
         <div>
           <div className="mb-6 md:mb-0 md:mr-10">
-            <h5 className="font-bold mb-3">Payment methods possible</h5>
+            <h1 className="font-bold mb-3">Payment methods possible</h1>
             <ul>{/* Add payment method icons or text here */}</ul>
           </div>
           <div>
-            <h5 className="font-bold mb-3">Company</h5>
+            <h1 className="font-bold mb-3">Company</h1>
             <ul>
               <li className="mb-2 hover:underline cursor-pointer">
                 Become a Tour guide for Us
@@ -79,18 +92,36 @@ const Footer = () => {
           <p className="text-sm mb-4 md:mb-0">
             Copyright 2021 Tour Guide. All Rights Reserved
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-facebook-f"></i>
+          <div className="flex space-x-6">
+            {" "}
+            {/* Menambahkan spasi antara ikon */}
+            <a
+              href="#"
+              className="text-white hover:text-gray-400"
+              aria-label="Facebook"
+            >
+              <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-twitter"></i>
+            <a
+              href="#"
+              className="text-white hover:text-gray-400"
+              aria-label="Twitter"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-instagram"></i>
+            <a
+              href="#"
+              className="text-white hover:text-gray-400"
+              aria-label="Instagram"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" className="text-white hover:text-gray-400">
-              <i className="fab fa-pinterest"></i>
+            <a
+              href="#"
+              className="text-white hover:text-gray-400"
+              aria-label="Pinterest"
+            >
+              <FontAwesomeIcon icon={faPinterest} />
             </a>
           </div>
         </div>
