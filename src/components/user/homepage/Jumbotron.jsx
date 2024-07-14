@@ -36,7 +36,8 @@ const Jumbotron = () => {
           >
             <div className="absolute inset-0 bg-black opacity-50 z-0 w-full h-full"></div>
             <img
-              src={item.image}
+              loading="lazy"
+              src={item.image.replace(".jpg", ".webp")}
               alt={`image ${index + 1}`}
               className="h-full w-full object-cover"
             />
