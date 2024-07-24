@@ -8,22 +8,19 @@ export const themeColors = {
 };
 
 export const protanopiaColors = {
-  blue: "bg-blue-500",
-  yellow: "bg-yellow-500",
+  yellow: "bg-protanopiaYellowBg",
+  blue: "bg-protanopiaBlueBg",
   black: "bg-black",
-  white: "bg-white",
 };
 
 export const deuteranopiaColors = {
-  blue: "bg-blue-500",
-  yellow: "bg-yellow-500",
+  yellow: "bg-deuteranopiaOrangeBg",
+  blue: "bg-deuteranopiaBlueBg",
   black: "bg-black",
-  white: "bg-white",
 };
 
 export const tritanopiaColors = {
   red: "bg-trinatopiaRedBg",
-  green: "bg-trinatopiaGreenBg",
+  green: "bg-trinatopiaBlueBg",
   black: "bg-black",
-  white: "bg-white",
 };

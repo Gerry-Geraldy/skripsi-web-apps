@@ -23,7 +23,7 @@ export function Configurator() {
 
   return (
     <aside
-      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-6 py-4 shadow-lg transition-transform duration-300 dark:bg-gray-800 ${
+      className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-6 py-4 shadow-lg transition-transform duration-300 dark:bg-gray-800 overflow-auto ${
         openConfigurator ? "translate-x-0" : "translate-x-96"
       }`}
     >
@@ -62,7 +62,7 @@ export function Configurator() {
             {Object.keys(themeColors).map((color) => (
               <span
                 key={color}
-                className={`h-8 w-8 cursor-pointer rounded-full border bg-gradient-to-br transition-transform hover:scale-110 ${
+                className={`h-8 w-8 cursor-pointer rounded-full border bg-gradient-to-br transition-transform hover:scale-110  ${
                   themeColors[color]
                 } ${
                   themeColor === color ? "border-black" : "border-transparent"
@@ -126,7 +126,7 @@ export function Configurator() {
               {Object.keys(tritanopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${tritanopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 border-black ${tritanopiaColors[color]}`}
                   onClick={() => setTritanopiaColor(dispatch, color)}
                 />
               ))}
@@ -144,7 +144,7 @@ export function Configurator() {
               {Object.keys(protanopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${protanopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 border-black ${protanopiaColors[color]}`}
                   onClick={() => setProtanopiaColor(dispatch, color)}
                 />
               ))}
@@ -163,7 +163,7 @@ export function Configurator() {
               {Object.keys(deuteranopiaColors).map((color) => (
                 <span
                   key={color}
-                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 ${deuteranopiaColors[color]}`}
+                  className={`h-8 w-8 cursor-pointer rounded-full border transition-transform hover:scale-110 border-black ${deuteranopiaColors[color]}`}
                   onClick={() => setDeuteranopiaColor(dispatch, color)}
                 />
               ))}

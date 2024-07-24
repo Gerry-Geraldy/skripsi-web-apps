@@ -11,17 +11,28 @@ export default withMT({
       primary: "#FEB81C",
 
       //Trinatopia
-      //Trinatopia Red
-      trinatopiaRedBg: "#F5D6D6",
+      trinatopiaRedBg: "#FCF3F3",
       trinatopiaRedTxt: "#A71111",
-      //Trinatopia Green
-      trinatopiaGreenBg: "#E3F9C3",
-      trinatopiaGreenTxt: "#395A07",
-      //Trinatopia Black
-      trinatopiaBlackBg: "#9C9C9C"
+      trinatopiaBlueBg: "#E8F7FC",
+      trinatopiaBlueTxt: "#0D5977",
+      trinatopiaBlackBg: "#FFFFFF",
+      trinatopiaBlackTxt: "#000000",
 
+      //Deuteranopia
+      deuteranopiaOrangeBg: "#FFD280",
+      deuteranopiaOrangeTxt: "#5C3C00",
+      deuteranopiaBlueBg: "#8DCEFC",
+      deuteranopiaBlueTxt: "#04395E",
+      deuteranopiaBlackBg: "#FFFFFF",
+      deuteranopiaBlackTxt: "#000000",
 
-
+      //Protanopia
+      protanopiaYellowBg: "#FFDB29",
+      protanopiaYellowTxt: "#524000",
+      protanopiaBlueBg: "#C1C3E6",
+      protanopiaBlueTxt: "#2C2F6D",
+      protanopiaBlackBg: "#FFFFFF",
+      protanopiaBlackTxt: "#000000",
     },
     extend: {
       fontFamily: {
