@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
-import { Collapse, Typography, IconButton } from "@material-tailwind/react";
+import {
+  Collapse,
+  Typography,
+  IconButton,
+  Button,
+} from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import routes from "../../routes";
 import { logo } from "../../../public";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faBlind } from "@fortawesome/free-solid-svg-icons";
 import { useMaterialTailwindController } from "../../context";
 import { setOpenConfigurator } from "../../context/reducer";
 import Configurator from "./configurator";
@@ -19,8 +24,13 @@ const Navbar = () => {
   const isHomePage = location.pathname === "/user/home";
   const isAboutPage = location.pathname === "/user/about";
   const [controller, dispatch] = useMaterialTailwindController();
-  const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor, sidenavType } =
-    controller;
+  const {
+    themeColor,
+    tritanopiaColor,
+    protanopiaColor,
+    deuteranopiaColor,
+    sidenavType,
+  } = controller;
   const { currentHoverBgColor, currentHoverTextColor } = useThemeSwitcherConfig(
     themeColor,
     tritanopiaColor,
@@ -59,13 +69,23 @@ const Navbar = () => {
   return (
     <section
       className={`mx-auto max-w-screen p-5 relative z-50 tw-full navbar ${
-        isMobile ? (sidenavType === 'dark' ? 'bg-gray-800' : 'bg-white') : ''
-      } ${isScrolled ? (sidenavType === 'dark' ? 'bg-gray-800 shadow-gray-700' : 'bg-white shadow-gray-600') : ''}`}
+        isMobile ? (sidenavType === "dark" ? "bg-gray-800" : "bg-white") : ""
+      } ${
+        isScrolled
+          ? sidenavType === "dark"
+            ? "bg-gray-800 shadow-gray-700"
+            : "bg-white shadow-gray-600"
+          : ""
+      }`}
       style={{
         transition: "background-color 0.3s ease-in-out",
       }}
     >
-      <div className={`flex items-center justify-between ${sidenavType === 'dark' ? 'text-white' : 'text-blue-gray-900'}`}>
+      <div
+        className={`flex items-center justify-between ${
+          sidenavType === "dark" ? "text-white" : "text-blue-gray-900"
+        }`}
+      >
         <Typography
           href="/"
           variant="h6"
@@ -93,18 +113,13 @@ const Navbar = () => {
               )}
             </IconButton>
             <Configurator />
-            <FontAwesomeIcon
-              icon={faCog}
-              size="lg"
-              className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
-                isScrolled
-                  ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
-                  : (isHomePage || isAboutPage) && !isMobile
-                  ? 'hover:text-white'
-                  : ''
-              }`}
+            <Button
+              className={`ml-4 flex items-center gap-2  ${currentHoverTextColor}`}
               onClick={() => setOpenConfigurator(dispatch, true)}
-            />
+            >
+              <FontAwesomeIcon icon={faBlind} size="lg" />
+              <span>Aksesibilitas</span>
+            </Button>
           </div>
         ) : (
           <div className="flex items-center justify-end">
@@ -118,20 +133,24 @@ const Navbar = () => {
                     variant="small"
                     className={`p-2 font-mulishSemiBold text-[13px] rounded-lg ${currentHoverBgColor} ${
                       (isHomePage || isAboutPage) && !isMobile
-                        ? 'text-white'
+                        ? "text-white"
                         : isScrolled
-                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white ')
-                        : ''
+                        ? sidenavType === "dark"
+                          ? "text-white"
+                          : "text-headingBlack hover:text-white "
+                        : ""
                     }`}
                   >
                     <Link
                       to={page.path}
                       className={`p-2 font-medium ${
                         isScrolled
-                          ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
+                          ? sidenavType === "dark"
+                            ? "text-white"
+                            : "text-headingBlack hover:text-white"
                           : (isHomePage || isAboutPage) && !isMobile
-                          ? 'text-white '
-                          : ''
+                          ? "text-white "
+                          : ""
                       }`}
                     >
                       {page.name}
@@ -141,18 +160,13 @@ const Navbar = () => {
             </ul>
 
             <Configurator />
-            <FontAwesomeIcon
-              icon={faCog}
-              size="xl"
-              className={`ml-4 cursor-pointer ${currentHoverTextColor} ${
-                isScrolled
-                  ? (sidenavType === 'dark' ? 'text-white hover:scale-105 focus:scale-95' : 'text-headingBlack hover:scale-105 focus:scale-95')
-                  : (isHomePage || isAboutPage) && !isMobile
-                  ? 'text-white hover:text-headingBlack'
-                  : ''
-              }`}
+            <Button
+              className={`ml-4 flex items-center gap-2  ${currentHoverTextColor}`}
               onClick={() => setOpenConfigurator(dispatch, true)}
-            />
+            >
+              <FontAwesomeIcon icon={faBlind} size="lg" />
+              <span>Aksesibilitas</span>
+            </Button>
           </div>
         )}
       </div>
@@ -170,20 +184,24 @@ const Navbar = () => {
                   variant="small"
                   className={`p-2 font-mulishSemiBold text-[13px] ${currentHoverBgColor} rounded-lg ${
                     (isHomePage || isAboutPage) && !isMobile
-                      ? 'text-white'
+                      ? "text-white"
                       : isScrolled
-                      ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
-                      : ''
+                      ? sidenavType === "dark"
+                        ? "text-white"
+                        : "text-headingBlack hover:text-white"
+                      : ""
                   }`}
                 >
                   <Link
                     to={page.path}
                     className={`p-2 font-medium ${
                       isScrolled
-                        ? (sidenavType === 'dark' ? 'text-white' : 'text-headingBlack hover:text-white')
+                        ? sidenavType === "dark"
+                          ? "text-white"
+                          : "text-headingBlack hover:text-white"
                         : (isHomePage || isAboutPage) && !isMobile
-                        ? 'text-white hover:text-headingBlack'
-                        : ''
+                        ? "text-white hover:text-headingBlack"
+                        : ""
                     }`}
                   >
                     {page.name}

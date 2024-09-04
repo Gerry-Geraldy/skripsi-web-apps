@@ -7,7 +7,7 @@ const BookingSidebar = ({ price }) => {
   const { themeColor, tritanopiaColor, protanopiaColor, deuteranopiaColor } =
     controller;
 
-  const { currentButtonColor, currentHoverBgColor } = useThemeSwitcherConfig(
+  const { currentButtonColor } = useThemeSwitcherConfig(
     themeColor,
     tritanopiaColor,
     protanopiaColor,
@@ -30,7 +30,7 @@ const BookingSidebar = ({ price }) => {
       </div>
       <button
         onClick={handleBooking}
-        className={`w-full text-white p-2 rounded-md font-semibold  text-[12px] sm:text-[14px] ${currentButtonColor} ${currentHoverBgColor}`}
+        className={`w-full p-2 rounded-md font-semibold  text-[12px] sm:text-[14px] ${currentButtonColor}`}
       >
         Ajukan Sewa
       </button>
